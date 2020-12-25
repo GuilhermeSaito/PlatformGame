@@ -17,6 +17,7 @@ void MainController::Start()
 
 	switcher.push_back(&splashScreen);
 	switcher.push_back(&openMenu);
+	switcher.push_back(&characterSelection);
 
 	while (controller >= 0)
 		controller = switcher[controller]->Start(window);

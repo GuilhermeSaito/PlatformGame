@@ -59,7 +59,7 @@ int OpenMenu::Start(sf::RenderWindow& window)
                 // 3 = Exit
                 case sf::Keyboard::Return:
                     if (controller == 0)
-                        return notImplementedYet(window);
+                        return CHARACTER_SELECTION;
                     else if (controller == 1)
                         return notImplementedYet(window);
                     else if (controller == 2)

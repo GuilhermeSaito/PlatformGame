@@ -3,6 +3,7 @@
 #include "SwitchPanel.h"
 #include "splashScreen.h"
 #include "openMenu.h"
+#include "characterSelection.h"
 
 #include <vector>
 
@@ -14,6 +15,7 @@ private:
 
 	SplashScreen splashScreen;
 	StartScreen::OpenMenu openMenu;
+	StartScreen::CharacterSelection characterSelection;
 
 public:
 	MainController();

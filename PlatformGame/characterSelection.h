@@ -11,10 +11,6 @@ namespace StartScreen
 	class CharacterSelection : public SwitchPanel
 	{
 	private:
-		// Just to show the player how is the phase
-		sf::Sprite phase1BackGround;
-		sf::Sprite phase2BackGround;
-
 		sf::Text menu1;
 		sf::Text menu2;
 		sf::Text menu3;
@@ -23,6 +19,15 @@ namespace StartScreen
 		string player1Name;
 		string player2Name;
 
+		// Just to show the player how is the phase
+		sf::Sprite beginnerPhaseSprite;
+		sf::Sprite blueOceanPhaseSprite;
+		sf::Sprite cavePhaseSprite;
+		sf::Sprite deathPhaseSprite;
+
+		sf::Sprite player1Sprite;
+		sf::Sprite player2Sprite;
+
 	public:
 		CharacterSelection();
 		~CharacterSelection();
@@ -30,5 +35,11 @@ namespace StartScreen
 		int Start(sf::RenderWindow& window) override;
 		int phaseSelection(sf::RenderWindow& window);
 		int characterSelection(sf::RenderWindow& window);
+
+		void updateMenuCollor(int controller, sf::RenderWindow& window, bool isPhaseSelection);
+		void player1Animation(int& contAnimationPlayer1, int& controller);
+		void player2Animation(int& contAnimationPlayer2, int& controller);
+
+		int notImplementedYet(sf::RenderWindow& window);
 	};
 }

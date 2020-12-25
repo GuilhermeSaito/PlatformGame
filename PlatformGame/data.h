@@ -9,10 +9,17 @@ private:
 	static Data* instance;
 
 	sf::Texture splashScreen;
+	sf::Texture splashScreen2;
 	sf::Texture openMenuBackGround;
-	sf::Texture openMenuBackGround2;
-	sf::Texture phase1BackGround;
-	sf::Texture phase2BackGround;
+	sf::Texture beginnerPhaseBackGround;
+	sf::Texture blueOceanPhaseBackGround;
+	sf::Texture cavePhaseBackGround;
+	sf::Texture deathPhaseBackGround;
+	sf::Texture fireVolcanoPhaseBackGround;
+	sf::Texture forestPhaseBackGround;
+	sf::Texture speranzaPhaseBackGround;
+	sf::Texture player1Image;
+	sf::Texture player2Image;
 
 	sf::Font openMenufont;
 
@@ -23,10 +30,17 @@ public:
 	static Data* getInstance();
 
 	sf::Texture* getSplashScreenTexture();
+	sf::Texture* getSplashScreenTexture2();
 	sf::Texture* getOpenMenuBackGround();
-	sf::Texture* getOpenMenuBackGround2();
-	sf::Texture* getPhase1BackGround();
-	sf::Texture* getPhase2BackGround();
+	sf::Texture* getBeginnerPhaseBackGround();
+	sf::Texture* getBlueOceanPhaseBackGround();
+	sf::Texture* getCavePhaseBackGround();
+	sf::Texture* getDathPhaseBackGround();
+	sf::Texture* getFireVolcanoPhaseBackGround();
+	sf::Texture* getForestPhaseBackGround();
+	sf::Texture* getSperanzaPhaseBackGround();
+	sf::Texture* getPlayer1Texture();
+	sf::Texture* getPlayer2Texture();
 
 	sf::Font* getOpenMenufont();
 
