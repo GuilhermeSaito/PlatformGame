@@ -28,6 +28,8 @@ namespace StartScreen
 		sf::Sprite player1Sprite;
 		sf::Sprite player2Sprite;
 
+		bool isMultiplayer;
+
 	public:
 		CharacterSelection();
 		~CharacterSelection();
@@ -35,10 +37,14 @@ namespace StartScreen
 		int Start(sf::RenderWindow& window) override;
 		int phaseSelection(sf::RenderWindow& window);
 		int characterSelection(sf::RenderWindow& window);
+		int nameCharacterSelection(sf::RenderWindow& window);
 
 		void updateMenuCollor(int controller, sf::RenderWindow& window, bool isPhaseSelection);
 		void player1Animation(int& contAnimationPlayer1, int& controller);
 		void player2Animation(int& contAnimationPlayer2, int& controller);
+
+		void player1NameEnter(int& totalChar1, sf::Event& event);
+		void player2NameEnter(int& totalChar2, sf::Event& event);
 
 		int notImplementedYet(sf::RenderWindow& window);
 	};

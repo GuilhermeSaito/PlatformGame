@@ -2,8 +2,13 @@
 
 using StartScreen::CharacterSelection;
 
-CharacterSelection::CharacterSelection()
+CharacterSelection::CharacterSelection() : isMultiplayer(false), player1Name(""), player2Name("")
 {
+    menu1.setFont(*(Data::getInstance()->getOpenMenufont()));
+    menu2.setFont(*(Data::getInstance()->getOpenMenufont()));
+    menu3.setFont(*(Data::getInstance()->getOpenMenufont()));
+    menu4.setFont(*(Data::getInstance()->getOpenMenufont()));
+
     beginnerPhaseSprite.setTexture(*(Data::getInstance()->getBeginnerPhaseBackGround()));
     // Width 550, Height 690
     beginnerPhaseSprite.setPosition({ 500.f, 20.f });
@@ -35,22 +40,18 @@ int CharacterSelection::Start(sf::RenderWindow& window)
 
 int CharacterSelection::phaseSelection(sf::RenderWindow& window)
 {
-    menu1.setFont(*(Data::getInstance()->getOpenMenufont()));
     menu1.setString("Beginner Phase");
     menu1.setPosition({ 100.f, 150.f });
     menu1.setCharacterSize(25);
 
-    menu2.setFont(*(Data::getInstance()->getOpenMenufont()));
     menu2.setString("Blue Ocean Phase");
     menu2.setPosition({ 100.f, 300.f });
     menu2.setCharacterSize(25);
 
-    menu3.setFont(*(Data::getInstance()->getOpenMenufont()));
     menu3.setString("Cave Phase");
     menu3.setPosition({ 100.f, 450.f });
     menu3.setCharacterSize(25);
 
-    menu4.setFont(*(Data::getInstance()->getOpenMenufont()));
     menu4.setString("Death Phase");
     menu4.setPosition({ 100.f, 600.f });
     menu4.setCharacterSize(25);
@@ -102,10 +103,8 @@ int CharacterSelection::phaseSelection(sf::RenderWindow& window)
 int CharacterSelection::characterSelection(sf::RenderWindow& window)
 {
     int controller = 0;
-    int contAnimationPlayer1 = 0;
-    int controller1 = 0;
-    int contAnimationPlayer2 = 0;
-    int controller2 = 0;
+    int contAnimationPlayer1 = 0, controller1 = 0;
+    int contAnimationPlayer2 = 0, controller2 = 0;
 
     menu1.setString("1 Player");
     menu1.setPosition({ 100.f, 225.f });
@@ -136,10 +135,11 @@ int CharacterSelection::characterSelection(sf::RenderWindow& window)
 
                 case sf::Keyboard::Return:
                     if (controller == 0)
-                        return notImplementedYet(window);
+                        isMultiplayer = false;
                     else if (controller == 1)
-                        return notImplementedYet(window);
-                }
+                        isMultiplayer = true;
+                    return nameCharacterSelection(window);
+                   }
             if (controller <= 0)
                 controller = 0;
             if (controller >= 1)
@@ -151,6 +151,81 @@ int CharacterSelection::characterSelection(sf::RenderWindow& window)
         updateMenuCollor(controller, window, false);
         window.draw(menu1);
         window.draw(menu2);
+        window.display();
+    }
+}
+
+int CharacterSelection::nameCharacterSelection(sf::RenderWindow& window)
+{
+    int tabPressed = 1;
+    int totalChar1 = 0, totalChar2 = 0;
+
+    player1Name = "";
+    player2Name = "";
+
+    menu1.setPosition({ 340.f, 230.f });
+    menu1.setFillColor(sf::Color(sf::Color::White));
+    menu1.setCharacterSize(40);
+    menu1.setString(player1Name);
+
+    menu2.setPosition({ 340.f, 270.f });
+    menu2.setFillColor(sf::Color(sf::Color::White));
+    menu2.setCharacterSize(40);
+    menu2.setString(player2Name);
+
+    menu3.setPosition({ 340.f, 100.f });
+    menu3.setFillColor(sf::Color(sf::Color::White));
+    menu3.setCharacterSize(30);
+    menu3.setString("Type your character name: (Enter to Start)");
+
+    menu4.setPosition({ 340.f, 50.f });
+    menu4.setFillColor(sf::Color(sf::Color::White));
+    menu4.setCharacterSize(30);
+    menu4.setString("Tab to name other player");
+
+    while (1)
+    {
+        window.clear();
+        sf::Event event;
+
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::TextEntered)
+            {
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Tab))
+                    tabPressed++;
+                if (isMultiplayer)
+                {
+                    if (tabPressed % 2 == 1)
+                        player1NameEnter(totalChar1, event);
+                    else
+                        player2NameEnter(totalChar2, event);
+                    menu2.setString(player2Name);
+                }
+                else player1NameEnter(totalChar1, event);
+                menu1.setString(player1Name);
+            }
+            // close button clicked
+            if (event.type == sf::Event::Closed)
+                return EXIT_GAME;
+
+            if (event.type == sf::Event::KeyPressed)
+                switch (event.key.code)
+                {
+                case sf::Keyboard::Return:
+                    return notImplementedYet(window);
+                }
+            if (tabPressed > 1111)
+                tabPressed = 0;
+        }
+
+        if (isMultiplayer)
+        {
+            window.draw(menu2);
+            window.draw(menu4);
+        }
+        window.draw(menu1);
+        window.draw(menu3);
         window.display();
     }
 }
@@ -185,15 +260,46 @@ void CharacterSelection::updateMenuCollor(int controller, sf::RenderWindow& wind
         menu2.setFillColor(sf::Color(255, 255, 255, 255));
         menu3.setFillColor(sf::Color(255, 0, 0, 255));
         menu4.setFillColor(sf::Color(255, 255, 255, 255));
-        if (isPhaseSelection) window.draw(cavePhaseSprite);
+        window.draw(cavePhaseSprite);
     }
     else
     {
         menu1.setFillColor(sf::Color(255, 255, 255, 255));
         menu2.setFillColor(sf::Color(255, 255, 255, 255));
-        menu3.setFillColor(sf::Color(255, 255, 255, 255));
+        menu3.setFillColor(sf::Color(255, 255, 255, 255)); 
         menu4.setFillColor(sf::Color(255, 0, 0, 255));
-        if (isPhaseSelection) window.draw(deathPhaseSprite);
+        window.draw(deathPhaseSprite);
+    }
+}
+
+void CharacterSelection::player1NameEnter(int& totalChar1, sf::Event& event)
+{
+    // To not take the tab
+    if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Tab))
+    {
+        // If backspace is pressed, erase the char
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace) && (totalChar1 > 0))
+            player1Name.erase(totalChar1--, 1);
+        else if ((totalChar1 <= 14) && (totalChar1 >= 0)) // Allow any char of the ASCII table
+        {
+            player1Name += (char)event.text.unicode;
+            totalChar1++;
+        }
+    }
+}
+void CharacterSelection::player2NameEnter(int& totalChar2, sf::Event& event)
+{
+    // To not take the tab
+    if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Tab))
+    {
+        // If backspace is pressed, erase the char
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace) && (totalChar2 > 0))
+            player2Name.erase(totalChar2--, 1);
+        else if ((totalChar2 <= 14) && (totalChar2 >= -1)) // Allow any char of the ASCII table
+        {
+            player2Name += (char)event.text.unicode;
+            totalChar2++;
+        }
     }
 }
 

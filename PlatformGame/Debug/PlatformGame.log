@@ -1,25 +1,25 @@
 ﻿  characterSelection.cpp
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(10,61): warning C4305: 'argument': truncation from 'double' to 'T'
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(15,61): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(13,62): warning C4305: 'argument': truncation from 'double' to 'T'
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(18,62): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(16,57): warning C4305: 'argument': truncation from 'double' to 'T'
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(21,57): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(19,58): warning C4305: 'argument': truncation from 'double' to 'T'
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(24,58): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(205,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(311,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -28,7 +28,7 @@ C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp
           [
               T=float
           ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(205,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(311,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
