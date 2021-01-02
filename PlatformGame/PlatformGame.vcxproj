@@ -151,15 +151,27 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainController.cpp" />
     <ClCompile Include="openMenu.cpp" />
+    <ClCompile Include="phaseManager.cpp" />
+    <ClCompile Include="phaseMap1.cpp" />
+    <ClCompile Include="phaseMap2.cpp" />
+    <ClCompile Include="PhaseMapManager.cpp" />
     <ClCompile Include="splashScreen.cpp" />
+    <ClCompile Include="tile.cpp" />
+    <ClCompile Include="tileManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="characterSelection.h" />
     <ClInclude Include="data.h" />
     <ClInclude Include="mainController.h" />
     <ClInclude Include="openMenu.h" />
+    <ClInclude Include="phaseManager.h" />
+    <ClInclude Include="phaseMap1.h" />
+    <ClInclude Include="phaseMap2.h" />
+    <ClInclude Include="PhaseMapManager.h" />
     <ClInclude Include="splashScreen.h" />
     <ClInclude Include="SwitchPanel.h" />
+    <ClInclude Include="tile.h" />
+    <ClInclude Include="tileManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

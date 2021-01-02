@@ -19,8 +19,15 @@ void MainController::Start()
 	switcher.push_back(&openMenu);
 	switcher.push_back(&characterSelection);
 
+
 	while (controller >= 0)
-		controller = switcher[controller]->Start(window);
+	{
+		if (controller != PHASE_MANAGER)
+			controller = switcher[controller]->Start(window);
+		else
+			controller = phaseManager.Start(window, characterSelection.getPlayer1Name(), characterSelection.getPlayer2Name(), characterSelection.getIsMultiplayer());
+			
+	}
 
 	window.close();
 }

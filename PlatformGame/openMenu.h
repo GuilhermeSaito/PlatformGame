@@ -21,6 +21,7 @@ namespace StartScreen
 
 		int Start(sf::RenderWindow& window) override;
 
+	private:
 		void updateMenuCollor(int controller);
 
 		int notImplementedYet(sf::RenderWindow& window);

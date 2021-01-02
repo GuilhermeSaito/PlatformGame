@@ -1,25 +1,7 @@
-﻿  characterSelection.cpp
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(15,61): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(18,62): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(21,57): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(24,58): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(311,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+﻿  main.cpp
+  mainController.cpp
+  phaseManager.cpp
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(26,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -28,7 +10,7 @@ C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp
           [
               T=float
           ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp(311,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(26,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -37,4 +19,10 @@ C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\characterSelection.cpp
           [
               T=float
           ]
+  phaseMap1.cpp
+  phaseMap2.cpp
+  Generating Code...
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseMap2.cpp(49): warning C4715: 'PhaseMap::PhaseMap2::draw': not all control paths return a value
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseMap1.cpp(48): warning C4715: 'PhaseMap::PhaseMap1::draw': not all control paths return a value
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(18): warning C4715: 'PhaseMap::PhaseManager::Start': not all control paths return a value
   PlatformGame.vcxproj -> C:\Users\guilh\Desktop\GameSFML\PlatformGame\Debug\PlatformGame.exe

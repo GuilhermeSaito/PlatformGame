@@ -20,6 +20,10 @@ private:
 	sf::Texture speranzaPhaseBackGround;
 	sf::Texture player1Image;
 	sf::Texture player2Image;
+	sf::Texture brickFloor;
+	sf::Texture iceFloor;
+	sf::Texture iceFloor2;
+	sf::Texture purpleFloor;
 
 	sf::Font openMenufont;
 
@@ -41,6 +45,10 @@ public:
 	sf::Texture* getSperanzaPhaseBackGround();
 	sf::Texture* getPlayer1Texture();
 	sf::Texture* getPlayer2Texture();
+	sf::Texture* getBrickFloor();
+	sf::Texture* getIceFloor();
+	sf::Texture* getIceFloor2();
+	sf::Texture* getPurpleFloor();
 
 	sf::Font* getOpenMenufont();
 

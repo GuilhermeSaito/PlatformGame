@@ -4,6 +4,7 @@
 #include "splashScreen.h"
 #include "openMenu.h"
 #include "characterSelection.h"
+#include "phaseManager.h"
 
 #include <vector>
 
@@ -16,6 +17,7 @@ private:
 	SplashScreen splashScreen;
 	StartScreen::OpenMenu openMenu;
 	StartScreen::CharacterSelection characterSelection;
+	PhaseMap::PhaseManager phaseManager;
 
 public:
 	MainController();

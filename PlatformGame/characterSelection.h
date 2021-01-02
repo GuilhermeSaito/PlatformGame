@@ -35,6 +35,8 @@ namespace StartScreen
 		~CharacterSelection();
 
 		int Start(sf::RenderWindow& window) override;
+
+	private:
 		int phaseSelection(sf::RenderWindow& window);
 		int characterSelection(sf::RenderWindow& window);
 		int nameCharacterSelection(sf::RenderWindow& window);
@@ -45,6 +47,14 @@ namespace StartScreen
 
 		void player1NameEnter(int& totalChar1, sf::Event& event);
 		void player2NameEnter(int& totalChar2, sf::Event& event);
+
+	public:
+		void setPlayer1Name(const string name1);
+		const string getPlayer1Name() const;
+		void setPlayer2Name(const string name2);
+		const string getPlayer2Name() const;
+		void setIsMultiplayer(const bool multiplayer);
+		const bool getIsMultiplayer() const;
 
 		int notImplementedYet(sf::RenderWindow& window);
 	};

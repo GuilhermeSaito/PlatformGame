@@ -6,6 +6,7 @@
 #define SPLASH_SCREEN 0
 #define OPEN_MENU 1
 #define CHARACTER_SELECTION 2
+#define PHASE_MANAGER 3
 
 class SwitchPanel
 {

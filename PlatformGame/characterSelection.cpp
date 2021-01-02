@@ -1,3 +1,6 @@
+// Included for remove \r from players name
+#include <algorithm>
+
 #include "characterSelection.h"
 
 using StartScreen::CharacterSelection;
@@ -213,7 +216,9 @@ int CharacterSelection::nameCharacterSelection(sf::RenderWindow& window)
                 switch (event.key.code)
                 {
                 case sf::Keyboard::Return:
-                    return notImplementedYet(window);
+                    player1Name.erase(std::remove(player1Name.begin(), player1Name.end(), '\r'), player1Name.end());
+                    player2Name.erase(std::remove(player2Name.begin(), player2Name.end(), '\r'), player2Name.end());
+                    return PHASE_MANAGER;
                 }
             if (tabPressed > 1111)
                 tabPressed = 0;
@@ -272,6 +277,30 @@ void CharacterSelection::updateMenuCollor(int controller, sf::RenderWindow& wind
     }
 }
 
+void CharacterSelection::player1Animation(int& contAnimationPlayer1, int& controller)
+{
+    contAnimationPlayer1++;
+    if (!(contAnimationPlayer1 % 300))
+        controller++;
+    if (controller > 2)
+        controller = 0;
+    if (contAnimationPlayer1 > 10000)
+        contAnimationPlayer1 = 0;
+    player1Sprite.setTextureRect(sf::IntRect(47 * controller, 48, 47, 48));
+}
+
+void CharacterSelection::player2Animation(int& contAnimationPlayer2, int& controller)
+{
+    contAnimationPlayer2++;
+    if (!(contAnimationPlayer2 % 300))
+        controller++;
+    if (controller > 2)
+        controller = 0;
+    if (contAnimationPlayer2 > 10000)
+        contAnimationPlayer2 = 0;
+    player2Sprite.setTextureRect(sf::IntRect(47 * controller, 0, 47, 48));
+}
+
 void CharacterSelection::player1NameEnter(int& totalChar1, sf::Event& event)
 {
     // To not take the tab
@@ -279,7 +308,7 @@ void CharacterSelection::player1NameEnter(int& totalChar1, sf::Event& event)
     {
         // If backspace is pressed, erase the char
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace) && (totalChar1 > 0))
-            player1Name.erase(totalChar1--, 1);
+            player1Name.erase(player1Name.begin() + totalChar1--);
         else if ((totalChar1 <= 14) && (totalChar1 >= 0)) // Allow any char of the ASCII table
         {
             player1Name += (char)event.text.unicode;
@@ -294,7 +323,7 @@ void CharacterSelection::player2NameEnter(int& totalChar2, sf::Event& event)
     {
         // If backspace is pressed, erase the char
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace) && (totalChar2 > 0))
-            player2Name.erase(totalChar2--, 1);
+            player2Name.erase(player2Name.begin() + totalChar2--);
         else if ((totalChar2 <= 14) && (totalChar2 >= -1)) // Allow any char of the ASCII table
         {
             player2Name += (char)event.text.unicode;
@@ -302,6 +331,17 @@ void CharacterSelection::player2NameEnter(int& totalChar2, sf::Event& event)
         }
     }
 }
+
+
+void CharacterSelection::setPlayer1Name(const string name1) { player1Name = name1; }
+const string CharacterSelection::getPlayer1Name() const { return player1Name; }
+void CharacterSelection::setPlayer2Name(const string name2) { player2Name = name2; }
+const string CharacterSelection::getPlayer2Name() const { return player2Name; }
+void CharacterSelection::setIsMultiplayer(const bool multiplayer) { isMultiplayer = multiplayer; }
+const bool CharacterSelection::getIsMultiplayer() const { return isMultiplayer; }
+
+
+
 
 int CharacterSelection::notImplementedYet(sf::RenderWindow& window)
 {
@@ -325,28 +365,4 @@ int CharacterSelection::notImplementedYet(sf::RenderWindow& window)
                 return -1;
             }
     }
-}
-
-void CharacterSelection::player1Animation(int& contAnimationPlayer1, int& controller)
-{
-    contAnimationPlayer1++;
-    if (!(contAnimationPlayer1 % 300))
-        controller++;
-    if (controller > 2)
-        controller = 0;
-    if (contAnimationPlayer1 > 10000)
-        contAnimationPlayer1 = 0;
-    player1Sprite.setTextureRect(sf::IntRect(47 * controller, 48, 47, 48));
-}
-
-void CharacterSelection::player2Animation(int& contAnimationPlayer2, int& controller)
-{
-    contAnimationPlayer2++;
-    if (!(contAnimationPlayer2 % 300))
-        controller++;
-    if (controller > 2)
-        controller = 0;
-    if (contAnimationPlayer2 > 10000)
-        contAnimationPlayer2 = 0;
-    player2Sprite.setTextureRect(sf::IntRect(47 * controller, 0, 47, 48));
 }
