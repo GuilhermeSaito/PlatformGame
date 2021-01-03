@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClCompile Include="characterSelection.cpp" />
     <ClCompile Include="data.cpp" />
+    <ClCompile Include="entity.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainController.cpp" />
     <ClCompile Include="openMenu.cpp" />
@@ -155,6 +156,7 @@
     <ClCompile Include="phaseMap1.cpp" />
     <ClCompile Include="phaseMap2.cpp" />
     <ClCompile Include="PhaseMapManager.cpp" />
+    <ClCompile Include="player1.cpp" />
     <ClCompile Include="splashScreen.cpp" />
     <ClCompile Include="tile.cpp" />
     <ClCompile Include="tileManager.cpp" />
@@ -162,12 +164,14 @@
   <ItemGroup>
     <ClInclude Include="characterSelection.h" />
     <ClInclude Include="data.h" />
+    <ClInclude Include="entity.h" />
     <ClInclude Include="mainController.h" />
     <ClInclude Include="openMenu.h" />
     <ClInclude Include="phaseManager.h" />
     <ClInclude Include="phaseMap1.h" />
     <ClInclude Include="phaseMap2.h" />
     <ClInclude Include="PhaseMapManager.h" />
+    <ClInclude Include="player1.h" />
     <ClInclude Include="splashScreen.h" />
     <ClInclude Include="SwitchPanel.h" />
     <ClInclude Include="tile.h" />

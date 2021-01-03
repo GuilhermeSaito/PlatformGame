@@ -30,6 +30,12 @@ namespace StartScreen
 
 		bool isMultiplayer;
 
+		// For sprite animation
+		sf::Clock clock1;
+		sf::Clock clock2;
+		int contAnimationPlayer1;
+		int contAnimationPlayer2;
+
 	public:
 		CharacterSelection();
 		~CharacterSelection();
@@ -42,8 +48,8 @@ namespace StartScreen
 		int nameCharacterSelection(sf::RenderWindow& window);
 
 		void updateMenuCollor(int controller, sf::RenderWindow& window, bool isPhaseSelection);
-		void player1Animation(int& contAnimationPlayer1, int& controller);
-		void player2Animation(int& contAnimationPlayer2, int& controller);
+		void player1Animation();
+		void player2Animation();
 
 		void player1NameEnter(int& totalChar1, sf::Event& event);
 		void player2NameEnter(int& totalChar2, sf::Event& event);

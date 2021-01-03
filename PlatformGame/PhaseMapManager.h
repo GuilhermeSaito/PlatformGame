@@ -29,9 +29,6 @@ namespace PhaseMap
             Tile* getTile(int posX, int posY);
             bool isValidTile(int i, int j);
 
-            // erase this
-            void showNumberTile();
-
         private:
             void clearMatrix();
         };

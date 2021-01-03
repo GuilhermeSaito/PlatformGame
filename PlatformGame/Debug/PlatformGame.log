@@ -1,28 +1,2 @@
-﻿  main.cpp
-  mainController.cpp
-  phaseManager.cpp
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(26,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(26,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-  phaseMap1.cpp
-  phaseMap2.cpp
-  Generating Code...
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseMap2.cpp(49): warning C4715: 'PhaseMap::PhaseMap2::draw': not all control paths return a value
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseMap1.cpp(48): warning C4715: 'PhaseMap::PhaseMap1::draw': not all control paths return a value
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(18): warning C4715: 'PhaseMap::PhaseManager::Start': not all control paths return a value
+﻿  phaseMap1.cpp
   PlatformGame.vcxproj -> C:\Users\guilh\Desktop\GameSFML\PlatformGame\Debug\PlatformGame.exe

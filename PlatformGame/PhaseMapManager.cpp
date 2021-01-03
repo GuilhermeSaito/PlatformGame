@@ -77,16 +77,6 @@ bool PhaseMapManager::isValidTile(int i, int j)
     return false;
 }
 
-void PhaseMapManager::showNumberTile()
-{
-    for (std::vector<Tile*> i : tileMap)
-    {
-        for (Tile* j : i)
-            std::cout << j->getNumTile() << " ";
-        std::cout << "\n";
-    }
-}
-
 void PhaseMapManager::clearMatrix()
 {
     for (std::vector<Tile*> v : tileMap)

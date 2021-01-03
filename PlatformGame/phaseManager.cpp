@@ -2,9 +2,10 @@
 
 using PhaseMap::PhaseManager;
 
-PhaseManager::PhaseManager() : 
-    phaseMap1("../PlatformGame/data/phaseMap/PhaseMapsJson/tse1.json"),
-    phaseMap2("../PlatformGame/data/phaseMap/PhaseMapsJson/tse2.json")
+PhaseManager::PhaseManager() :
+    phaseMap1("../PlatformGame/data/phaseMap/PhaseMapsJson/phaseMap1.json"),
+    phaseMap2("../PlatformGame/data/phaseMap/PhaseMapsJson/phaseMap2.json"),
+    player1({ 2 * 48, 27 * 48 }, { 0,0 })
 {
 }
 
@@ -13,8 +14,34 @@ PhaseManager::~PhaseManager()
 }
 int PhaseManager::Start(sf::RenderWindow& window, const string player1Name, const string player2Name, const bool multiplayer)
 {
-    if (phaseMap1.draw(window) == 2)
-        return phaseMap2.draw(window);
+    if (!phaseMap1.loadPhaseMap())
+        return EXIT_GAME;
+    if (!phaseMap2.loadPhaseMap())
+        return EXIT_GAME;
+
+    phaseMap1.setPlayer1(&player1);
+    phaseMap2.setPlayer1(&player1);
+
+    int option = 0;
+    while (option >= 0)
+    {
+        if (option == 0)
+        {
+            phaseMap1.update();
+            option = phaseMap1.render(window);
+        }
+        else if (option == 2)
+        {
+            phaseMap2.update();
+            option = phaseMap2.render(window);
+        }
+    }
+    return -1;
+}
+
+void PhaseManager::resetEverything()
+{
+    player1.setPosition({ 2 * 48, 27 * 48 });
 }
 
 

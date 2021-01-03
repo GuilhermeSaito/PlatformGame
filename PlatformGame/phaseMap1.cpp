@@ -3,46 +3,42 @@
 using namespace PhaseMap;
 
 PhaseMap1::PhaseMap1(std::string path) :
-	phaseMapManager(path)
+	phaseMapManager(path),
+    player1(NULL)
 {
 }
 PhaseMap1::~PhaseMap1()
 {
 }
 
-int PhaseMap1::draw(sf::RenderWindow& window)
+void PhaseMap1::update()
 {
-    sf::RectangleShape rectangle(sf::Vector2f(120.f, 50.f));
-    rectangle.setSize(sf::Vector2f(100.f, 100.f));
-    rectangle.setPosition(sf::Vector2f(0, 0));
-
-    
-	if (phaseMapManager.loadMapTileProprieties())
-		while (1)
-		{
-            sf::View player1View(sf::Vector2f(rectangle.getPosition().x + 1000, rectangle.getPosition().y + 1000), sf::Vector2f(1120, 672));
-            window.setView(player1View);
-
-            sf::Event event;
-            if (window.pollEvent(event))
-                switch (event.type)
-                {
-                case sf::Event::Closed:
-                    return -1;
-                case sf::Event::MouseButtonPressed:
-                    return 2;
-                }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-                rectangle.move(-10.f, 0.f);
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-                rectangle.move(10.f, 0.f);
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-                rectangle.move(0.f, -10.f);
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-                rectangle.move(0.f, 10.f);
-            window.clear();
-            window.draw(rectangle);
-			phaseMapManager.draw(window);
-            window.display();
-        }
+    player1->movementation();
 }
+
+int PhaseMap1::render(sf::RenderWindow& window)
+{
+    //sf::View player1View(sf::Vector2f(player1->getPosition().x, 335), sf::Vector2f(1120, 672));
+    //window.setView(player1View);
+
+    sf::Event event;
+    if (window.pollEvent(event))
+        switch (event.type)
+        {
+        case sf::Event::Closed:
+            return -1;
+        case sf::Event::MouseButtonPressed:
+            return 2;
+        }
+    window.clear();
+    player1->draw(window);
+	phaseMapManager.draw(window);
+    window.display();
+    return 0;
+}
+bool PhaseMap1::loadPhaseMap()
+{
+    return phaseMapManager.loadMapTileProprieties();
+}
+
+void PhaseMap1::setPlayer1(Entidade::Player1* p1) { player1 = p1; }
