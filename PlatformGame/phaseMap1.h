@@ -2,6 +2,7 @@
 
 #include "PhaseMapManager.h"
 #include "player1.h"
+#include "CollisionManager.h"
 
 namespace PhaseMap
 {
@@ -11,6 +12,8 @@ namespace PhaseMap
 		Tiles::PhaseMapManager phaseMapManager;
 
 		Entidade::Player1* player1;
+
+		CollisionManager collisionManager;
 	
 	public:
 		PhaseMap1(std::string path = "");

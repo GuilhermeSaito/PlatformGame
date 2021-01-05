@@ -3,6 +3,7 @@
 MainController::MainController()
 {
 	window.create(sf::VideoMode(1080, 720), "Arudina's Game");
+	window.setFramerateLimit(60);
     
     Start();
 }

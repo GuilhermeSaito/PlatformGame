@@ -1,6 +1,7 @@
 #pragma once
 
 #include "data.h"
+#include "tile.h"
 
 namespace Entidade
 {
@@ -27,8 +28,12 @@ namespace Entidade
 		void setPosition(const sf::Vector2f pos);
 		const sf::Vector2f getSpeed() const;
 		void setSpeed(const sf::Vector2f spee);
+		const sf::Vector2f getSize() const;
 
 		sf::FloatRect getBoundBox();
+		void collisionInX(PhaseMap::Tiles::Tile* tile);
+		void collisionInY(PhaseMap::Tiles::Tile* tile);
+		void gravity();
 		const bool getOnGround() const;
 		void setOnGround(const bool onG);
 		void jump();

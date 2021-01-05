@@ -13,13 +13,15 @@ PhaseMap1::~PhaseMap1()
 
 void PhaseMap1::update()
 {
+    collisionManager.startVerifyCollision();
+    player1->gravity();
     player1->movementation();
 }
 
 int PhaseMap1::render(sf::RenderWindow& window)
-{
-    //sf::View player1View(sf::Vector2f(player1->getPosition().x, 335), sf::Vector2f(1120, 672));
-    //window.setView(player1View);
+{                                               // 
+    sf::View player1View(sf::Vector2f(player1->getPosition()), sf::Vector2f(1120, 672));
+    window.setView(player1View);
 
     sf::Event event;
     if (window.pollEvent(event))
@@ -30,6 +32,7 @@ int PhaseMap1::render(sf::RenderWindow& window)
         case sf::Event::MouseButtonPressed:
             return 2;
         }
+
     window.clear();
     player1->draw(window);
 	phaseMapManager.draw(window);
@@ -38,7 +41,13 @@ int PhaseMap1::render(sf::RenderWindow& window)
 }
 bool PhaseMap1::loadPhaseMap()
 {
-    return phaseMapManager.loadMapTileProprieties();
+    bool flag = phaseMapManager.loadMapTileProprieties();
+    collisionManager.setPhaseMapManager(&phaseMapManager);
+    return flag;
 }
 
-void PhaseMap1::setPlayer1(Entidade::Player1* p1) { player1 = p1; }
+void PhaseMap1::setPlayer1(Entidade::Player1* p1) 
+{ 
+    player1 = p1; 
+    collisionManager.setPlayer1(p1);
+}

@@ -30,7 +30,18 @@ void Player1::movementation()
 		isLookingRight = true;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
 		jump();
+		// erase this
+		//speed.y = jumpSpeed;
+		//position.y += speed.y;
+	}
+	// erase this
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		speed.y = -jumpSpeed;
+		position.y += speed.y;
+	}
 
 	rect.setPosition(position);
 	sprite.setPosition(position);

@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="characterSelection.cpp" />
+    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="data.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="main.cpp" />
@@ -163,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="characterSelection.h" />
+    <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="data.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="mainController.h" />
