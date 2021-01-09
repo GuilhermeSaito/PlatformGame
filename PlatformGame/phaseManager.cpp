@@ -5,7 +5,8 @@ using PhaseMap::PhaseManager;
 PhaseManager::PhaseManager() :
     phaseMap1("../PlatformGame/data/phaseMap/PhaseMapsJson/phaseMap1.json"),
     phaseMap2("../PlatformGame/data/phaseMap/PhaseMapsJson/phaseMap2.json"),
-    player1({ 2 * 48, 27 * 48 }, { 0,0 })
+    player1({ 2 * 48, 27 * 48 }, { 0,0 }, 100),
+    player2({ 3 * 48, 27 * 48 }, { 0,0 }, 100)
 {
 }
 
@@ -21,6 +22,11 @@ int PhaseManager::Start(sf::RenderWindow& window, const string player1Name, cons
 
     phaseMap1.setPlayer1(&player1);
     phaseMap2.setPlayer1(&player1);
+    if (multiplayer)
+    {
+        phaseMap1.setPlayer2(&player2);
+        phaseMap2.setPlayer2(&player2);
+    }
 
     int option = 0;
     while (option >= 0)

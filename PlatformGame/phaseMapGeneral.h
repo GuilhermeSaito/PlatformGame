@@ -2,6 +2,7 @@
 
 #include "PhaseMapManager.h"
 #include "player1.h"
+#include "Player2.h"
 #include "CollisionManager.h"
 
 namespace PhaseMap
@@ -12,6 +13,7 @@ namespace PhaseMap
 		Tiles::PhaseMapManager phaseMapManager;
 
 		Entidade::Player1* player1;
+		Entidade::Player2* player2;
 
 		CollisionManager collisionManager;
 
@@ -29,7 +31,7 @@ namespace PhaseMap
 		virtual void renderPhaseBackGround(sf::RenderWindow& window);
 
 	public:
-
 		void setPlayer1(Entidade::Player1* p1);
+		void setPlayer2(Entidade::Player2* p2);
 	};
 }

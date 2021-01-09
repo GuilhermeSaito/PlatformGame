@@ -28,6 +28,11 @@ void PhaseMap1::update()
     collisionManager.startVerifyCollision();
     player1->gravity();
     player1->movementation();
+    if (player2 != NULL)
+    {
+        player2->gravity();
+        player2->movementation();
+    }
 }
 
 int PhaseMap1::render(sf::RenderWindow& window)
@@ -48,6 +53,8 @@ int PhaseMap1::render(sf::RenderWindow& window)
     window.clear();
     renderPhaseBackGround(window);
     player1->draw(window);
+    if (player2 != NULL)
+        player2->draw(window);
 	phaseMapManager.draw(window);
     window.display();
     return 0;

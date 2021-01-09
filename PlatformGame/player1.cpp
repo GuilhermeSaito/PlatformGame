@@ -2,8 +2,8 @@
 
 using namespace Entidade;
 
-Player1::Player1(sf::Vector2f pos, sf::Vector2f spee) :
-	Entity(pos, spee),
+Player1::Player1(sf::Vector2f pos, sf::Vector2f spee, float hP) :
+	Entity(pos, spee, hP),
 	contAnimation(0)
 {
 	rect.setPosition(pos);
@@ -32,18 +32,7 @@ void Player1::movementation()
 		isLookingRight = true;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-	{
 		jump();
-		// erase this
-		//speed.y = jumpSpeed;
-		//position.y += speed.y;
-	}
-	// erase this
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	{
-		speed.y = -jumpSpeed;
-		position.y += speed.y;
-	}
 
 	rect.setPosition(position);
 	sprite.setPosition(position);

@@ -159,6 +159,7 @@
     <ClCompile Include="phaseMap2.cpp" />
     <ClCompile Include="PhaseMapManager.cpp" />
     <ClCompile Include="player1.cpp" />
+    <ClCompile Include="Player2.cpp" />
     <ClCompile Include="splashScreen.cpp" />
     <ClCompile Include="tile.cpp" />
     <ClCompile Include="tileManager.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="phaseMap2.h" />
     <ClInclude Include="PhaseMapManager.h" />
     <ClInclude Include="player1.h" />
+    <ClInclude Include="Player2.h" />
     <ClInclude Include="splashScreen.h" />
     <ClInclude Include="SwitchPanel.h" />
     <ClInclude Include="tile.h" />

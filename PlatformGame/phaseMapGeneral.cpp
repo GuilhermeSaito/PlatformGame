@@ -4,7 +4,8 @@ using namespace PhaseMap;
 
 PhaseMapGeneral::PhaseMapGeneral(std::string path) :
     phaseMapManager(path),
-    player1(NULL)
+    player1(NULL),
+    player2(NULL)
 {
 }
 PhaseMapGeneral::~PhaseMapGeneral()
@@ -52,4 +53,9 @@ void PhaseMapGeneral::setPlayer1(Entidade::Player1* p1)
 {
     player1 = p1;
     collisionManager.setPlayer1(p1);
+}
+void PhaseMapGeneral::setPlayer2(Entidade::Player2* p2)
+{
+    player2 = p2;
+    collisionManager.setPlayer2(p2);
 }

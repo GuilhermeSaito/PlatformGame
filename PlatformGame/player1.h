@@ -12,7 +12,7 @@ namespace Entidade
 		int contAnimation;
 
 	public:
-		Player1(sf::Vector2f pos = { 2 * 48, 27 * 48 }, sf::Vector2f spee = { 0, 0 });
+		Player1(sf::Vector2f pos = { 2 * 48, 27 * 48 }, sf::Vector2f spee = { 0, 0 }, float hP = 100);
 		~Player1();
 
 		void movementation();

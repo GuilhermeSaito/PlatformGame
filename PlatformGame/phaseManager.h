@@ -5,6 +5,7 @@
 #include "phaseMap1.h"
 #include "phaseMap2.h"
 #include "player1.h"
+#include "Player2.h"
 using std::string;
 
 namespace PhaseMap
@@ -16,6 +17,7 @@ namespace PhaseMap
 		PhaseMap2 phaseMap2;
 
 		Entidade::Player1 player1;
+		Entidade::Player2 player2;
 
 	public:
 		PhaseManager();
