@@ -3,9 +3,10 @@
 using namespace PhaseMap;
 
 PhaseMap2::PhaseMap2(std::string path) :
-    phaseMapManager(path),
-    player1(NULL)
+    PhaseMapGeneral(path)
 {
+    // Transforming the image to 1080 x 720
+
 }
 PhaseMap2::~PhaseMap2()
 {
@@ -13,12 +14,14 @@ PhaseMap2::~PhaseMap2()
 
 void PhaseMap2::update()
 {
+    collisionManager.startVerifyCollision();
+    player1->gravity();
     player1->movementation();
 }
 
 int PhaseMap2::render(sf::RenderWindow& window)
 {
-    sf::View player1View(sf::Vector2f(player1->getPosition().x, 335), sf::Vector2f(1120, 672));
+    sf::View player1View(sf::Vector2f(player1->getPosition()), sf::Vector2f(1120, 672));
     window.setView(player1View);
 
     sf::Event event;
@@ -28,16 +31,15 @@ int PhaseMap2::render(sf::RenderWindow& window)
         case sf::Event::Closed:
             return -1;
         }
+
     window.clear();
     player1->draw(window);
     phaseMapManager.draw(window);
     window.display();
     return 2;
 }
-bool PhaseMap2::loadPhaseMap()
+
+void PhaseMap2::renderPhaseBackGround(sf::RenderWindow& window)
 {
-    return phaseMapManager.loadMapTileProprieties();
+
 }
-
-
-void PhaseMap2::setPlayer1(Entidade::Player1* p1) { player1 = p1; }

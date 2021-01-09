@@ -1,6 +1,8 @@
 #include "CollisionManager.h"
 
-CollisionManager::CollisionManager()
+CollisionManager::CollisionManager() : 
+	player1(NULL),
+	phaseMapManager(NULL)
 {
 }
 CollisionManager::~CollisionManager()
@@ -22,10 +24,7 @@ void CollisionManager::player1CollisionX()
 			continue;
 		PhaseMap::Tiles::Tile* tempTile = phaseMapManager->getTile(i, player1->getPosition().y / 48);
 		if (player1->getBoundBox().intersects(tempTile->getBoundBox()))
-		{
-			std::cout << "Collision Ocurred! X" << std::endl;
 			player1->collisionInX(tempTile);
-		}
 	}
 }
 void CollisionManager::player1CollisionY()
@@ -37,10 +36,9 @@ void CollisionManager::player1CollisionY()
 			continue;
 		PhaseMap::Tiles::Tile* tempTile = phaseMapManager->getTile(player1->getPosition().x / TILE_SIZE, j);
 		if (player1->getBoundBox().intersects(tempTile->getBoundBox()))
-		{
-			std::cout << "Collision Ocurred! Y" << std::endl;
 			player1->collisionInY(tempTile);
-		}
+		else
+			player1->setOnGround(false);
 	}
 }
 

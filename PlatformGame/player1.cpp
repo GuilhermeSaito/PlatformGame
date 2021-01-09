@@ -10,6 +10,8 @@ Player1::Player1(sf::Vector2f pos, sf::Vector2f spee) :
 
 	sprite.setTexture(*(Data::getInstance()->getPlayer1Texture()));
 	sprite.setPosition(rect.getPosition());
+
+	healthBar.setFillColor(sf::Color::Blue);
 }
 Player1::~Player1()
 {
@@ -46,11 +48,16 @@ void Player1::movementation()
 	rect.setPosition(position);
 	sprite.setPosition(position);
 
+	healthBar.setSize(sf::Vector2f(hp, 20));
+	healthBar.setPosition(sf::Vector2f(position.x - 10, position.y - 25));
+
 	spriteAnimation();
 }
 
 void Player1::draw(sf::RenderWindow& window)
 {
+	window.draw(healthBar);
+
 	window.draw(sprite);
 }
 

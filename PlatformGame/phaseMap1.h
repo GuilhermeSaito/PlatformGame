@@ -1,28 +1,18 @@
 #pragma once
 
-#include "PhaseMapManager.h"
-#include "player1.h"
-#include "CollisionManager.h"
+#include "phaseMapGeneral.h"
 
 namespace PhaseMap
 {
-	class PhaseMap1
+	class PhaseMap1 : public PhaseMapGeneral
 	{
-	private:
-		Tiles::PhaseMapManager phaseMapManager;
-
-		Entidade::Player1* player1;
-
-		CollisionManager collisionManager;
-	
 	public:
 		PhaseMap1(std::string path = "");
 		~PhaseMap1();
 
-		void update();
-		int render(sf::RenderWindow& window);
-		bool loadPhaseMap();
-	
-		void setPlayer1(Entidade::Player1* p1);
+		void update() override;
+		int render(sf::RenderWindow& window) override;
+
+		virtual void renderPhaseBackGround(sf::RenderWindow& window) override;
 	};
 }

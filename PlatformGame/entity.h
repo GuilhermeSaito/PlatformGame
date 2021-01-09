@@ -11,6 +11,9 @@ namespace Entidade
 		sf::Vector2f position;
 		sf::Vector2f speed;
 		float walkSpeed;
+
+		sf::RectangleShape healthBar;
+		float hp;
 		
 		sf::RectangleShape rect;
 		bool onGround;
@@ -21,7 +24,7 @@ namespace Entidade
 		bool isLookingRight;
 
 	public:
-		Entity(sf::Vector2f pos = { 0 , 0 }, sf::Vector2f spee = { 0, 0 });
+		Entity(sf::Vector2f pos = { 0 , 0 }, sf::Vector2f spee = { 0, 0 }, float hP = 100);
 		~Entity();
 
 		const sf::Vector2f getPosition() const;
@@ -29,6 +32,9 @@ namespace Entidade
 		const sf::Vector2f getSpeed() const;
 		void setSpeed(const sf::Vector2f spee);
 		const sf::Vector2f getSize() const;
+
+		const float getHp() const;
+		void setHp(const float hP);
 
 		sf::FloatRect getBoundBox();
 		void collisionInX(PhaseMap::Tiles::Tile* tile);

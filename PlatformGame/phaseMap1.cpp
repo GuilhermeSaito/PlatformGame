@@ -3,12 +3,24 @@
 using namespace PhaseMap;
 
 PhaseMap1::PhaseMap1(std::string path) :
-	phaseMapManager(path),
-    player1(NULL)
+    PhaseMapGeneral(path)
 {
+    // Transforming the image to 1080 x 1440
+    for (int i = 0; i < 6; i++)
+    {
+        sf::Sprite* sprite = new sf::Sprite;
+        sprite->setTexture(*(Data::getInstance()->getBeginnerPhaseBackGround()));
+        sprite->setScale(sf::Vector2f(0.5625, 1.5));
+        sprite->setPosition(sf::Vector2f(1080 * i, 48*4));
+        phaseBackGroundSprite.push_back(sprite);
+    }
 }
 PhaseMap1::~PhaseMap1()
 {
+    
+    for (auto* i : phaseBackGroundSprite)
+        delete i;
+    phaseBackGroundSprite.clear();
 }
 
 void PhaseMap1::update()
@@ -19,7 +31,7 @@ void PhaseMap1::update()
 }
 
 int PhaseMap1::render(sf::RenderWindow& window)
-{                                               // 
+{                                               
     sf::View player1View(sf::Vector2f(player1->getPosition()), sf::Vector2f(1120, 672));
     window.setView(player1View);
 
@@ -34,20 +46,15 @@ int PhaseMap1::render(sf::RenderWindow& window)
         }
 
     window.clear();
+    renderPhaseBackGround(window);
     player1->draw(window);
 	phaseMapManager.draw(window);
     window.display();
     return 0;
 }
-bool PhaseMap1::loadPhaseMap()
-{
-    bool flag = phaseMapManager.loadMapTileProprieties();
-    collisionManager.setPhaseMapManager(&phaseMapManager);
-    return flag;
-}
 
-void PhaseMap1::setPlayer1(Entidade::Player1* p1) 
-{ 
-    player1 = p1; 
-    collisionManager.setPlayer1(p1);
+void PhaseMap1::renderPhaseBackGround(sf::RenderWindow& window)
+{
+    for (auto* i : phaseBackGroundSprite)
+        window.draw(*i);
 }
