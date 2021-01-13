@@ -24,6 +24,7 @@ private:
 	sf::Texture iceFloor;
 	sf::Texture iceFloor2;
 	sf::Texture purpleFloor;
+	sf::Texture playerDieBackGround;
 
 	sf::Font openMenufont;
 
@@ -49,6 +50,7 @@ public:
 	sf::Texture* getIceFloor();
 	sf::Texture* getIceFloor2();
 	sf::Texture* getPurpleFloor();
+	sf::Texture* getPlayerDieBackGroundTexture();
 
 	sf::Font* getOpenMenufont();
 

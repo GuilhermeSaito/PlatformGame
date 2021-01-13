@@ -15,6 +15,12 @@ PhaseMap2::~PhaseMap2()
 void PhaseMap2::update(int& controller)
 {
     collisionManager.startVerifyCollision();
+    if (isPlayerDead())
+    {
+        controller = PLAYER_DIE;
+        return;
+    }
+
     player1->gravity();
     player1->movementation();
     if (player2 != NULL)
@@ -35,7 +41,7 @@ void PhaseMap2::render(sf::RenderWindow& window, int& controller)
         switch (event.type)
         {
         case sf::Event::Closed:
-            controller = GAME_EXIT;
+            controller = EXIT_GAME;
         }
 
     window.clear();

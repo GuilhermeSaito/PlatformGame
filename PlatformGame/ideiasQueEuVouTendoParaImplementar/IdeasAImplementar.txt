@@ -1,0 +1,7 @@
+- Ver como funciona o SFML com a internet.
+
+
+	º Para a jogabilidade:
+
+- Caso o player morra, vai para uma fase especial que se completar ela, eh possivel reviver, dando essa opcao para a pessoa.
+	Ai da para pegar o background que esta na pasta data

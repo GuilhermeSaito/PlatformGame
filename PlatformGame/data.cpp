@@ -36,6 +36,8 @@ Data::Data()
 		EXIT_FAILURE;
 	if (!purpleFloor.loadFromFile("../PlatformGame/data/phaseMap/TilesUsed/purpleFloor.jpg"))
 		EXIT_FAILURE;
+	if (!playerDieBackGround.loadFromFile("../PlatformGame/data/playerDieImageScenario/deathWithEffectPhrase.jpg"))
+		EXIT_FAILURE;
 
 
 	if (!openMenufont.loadFromFile("../PlatformGame/data/fonts/TurretRoad-Medium.ttf"))
@@ -120,6 +122,10 @@ sf::Texture* Data::getIceFloor2()
 sf::Texture* Data::getPurpleFloor()
 {
 	return& purpleFloor;
+}
+sf::Texture* Data::getPlayerDieBackGroundTexture()
+{
+	return& playerDieBackGround;
 }
 
 sf::Font* Data::getOpenMenufont()

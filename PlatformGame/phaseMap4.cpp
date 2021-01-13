@@ -35,7 +35,7 @@ void PhaseMap4::render(sf::RenderWindow& window, int& controller)
         switch (event.type)
         {
         case sf::Event::Closed:
-            controller = GAME_EXIT;
+            controller = EXIT_GAME;
         }
 
     window.clear();

@@ -5,11 +5,15 @@
 #include "Player2.h"
 #include "CollisionManager.h"
 
+// Just for the defines
+#include "SwitchPanel.h"
+
 #define PHASE1 1
 #define PHASE2 2
 #define PHASE3 3
 #define PHASE4 4
-#define GAME_EXIT -1
+
+#define PLAYER_DIE 66
 
 namespace PhaseMap
 {
@@ -36,11 +40,14 @@ namespace PhaseMap
 	protected:
 		virtual void renderPhaseBackGround(sf::RenderWindow& window);
 		void phaseTransition(int& contoller);
-
-		void resetEverything();
+		bool isPlayerDead();
 
 	public:
+		void resetEverythingForTransition();
+
 		void setPlayer1(Entidade::Player1* p1);
 		void setPlayer2(Entidade::Player2* p2);
+
+		void ResetAll();
 	};
 }

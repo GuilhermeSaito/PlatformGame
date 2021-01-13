@@ -1,7 +1,5 @@
 #pragma once
 
-// just for the OPEN_MENU
-#include "SwitchPanel.h"
 #include "phaseMap1.h"
 #include "phaseMap2.h"
 #include "phaseMap3.h"
@@ -23,6 +21,8 @@ namespace PhaseMap
 		Entidade::Player1 player1;
 		Entidade::Player2 player2;
 
+		bool needToLoadPhase;
+
 	public:
 		PhaseManager();
 		~PhaseManager();
@@ -31,6 +31,11 @@ namespace PhaseMap
 
 	private:
 		int loadPhaseMap(const bool multiplayer);
+
+		int showPlayerDie(sf::RenderWindow& window);
+		void normalizeView(sf::RenderWindow& window);
+
+		void ResetALL();
 
 		int notImplementedYet(sf::RenderWindow& window);
 	};

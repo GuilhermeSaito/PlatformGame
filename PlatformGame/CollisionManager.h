@@ -29,5 +29,7 @@ public:
 	void setPlayer1(Entidade::Player1* p1);
 	void setPlayer2(Entidade::Player2* p2);
 	void setPhaseMapManager(PhaseMap::Tiles::PhaseMapManager* phaseMapMa);
+
+	void ResetAll();
 };
 

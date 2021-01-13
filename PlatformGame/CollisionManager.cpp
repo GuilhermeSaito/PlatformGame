@@ -8,6 +8,8 @@ CollisionManager::CollisionManager() :
 }
 CollisionManager::~CollisionManager()
 {
+	ResetAll();
+	phaseMapManager = NULL;
 }
 
 void CollisionManager::startVerifyCollision()
@@ -78,3 +80,9 @@ void CollisionManager::player2CollisionY()
 void CollisionManager::setPlayer1(Entidade::Player1* p1) { player1 = p1; }
 void CollisionManager::setPlayer2(Entidade::Player2* p2) { player2 = p2; }
 void CollisionManager::setPhaseMapManager(PhaseMap::Tiles::PhaseMapManager* phaseMapMa) { phaseMapManager = phaseMapMa; }
+
+void CollisionManager::ResetAll()
+{
+	player1 = NULL;
+	player2 = NULL;
+}
