@@ -9,7 +9,7 @@ Entity::Entity(sf::Vector2f pos, sf::Vector2f spee, float hP) :
 	position(pos),
 	speed(spee),
 	hp(hP),
-	walkSpeed(10),
+	walkSpeed(8),
 	onGround(false),
 	jumpSpeed(-20),
 	gravityAcceleration((float)1.1),

@@ -5,6 +5,12 @@
 #include "Player2.h"
 #include "CollisionManager.h"
 
+#define PHASE1 1
+#define PHASE2 2
+#define PHASE3 3
+#define PHASE4 4
+#define GAME_EXIT -1
+
 namespace PhaseMap
 {
 	class PhaseMapGeneral
@@ -23,12 +29,15 @@ namespace PhaseMap
 		PhaseMapGeneral(std::string path = "");
 		virtual ~PhaseMapGeneral();
 
-		virtual void update();
-		virtual int render(sf::RenderWindow& window);
+		virtual void update(int& controller);
+		virtual void render(sf::RenderWindow& window, int& controller);
 		bool loadPhaseMap();
 
 	protected:
 		virtual void renderPhaseBackGround(sf::RenderWindow& window);
+		void phaseTransition(int& contoller);
+
+		void resetEverything();
 
 	public:
 		void setPlayer1(Entidade::Player1* p1);

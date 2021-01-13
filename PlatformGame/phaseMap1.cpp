@@ -23,7 +23,7 @@ PhaseMap1::~PhaseMap1()
     phaseBackGroundSprite.clear();
 }
 
-void PhaseMap1::update()
+void PhaseMap1::update(int& controller)
 {
     collisionManager.startVerifyCollision();
     player1->gravity();
@@ -33,9 +33,10 @@ void PhaseMap1::update()
         player2->gravity();
         player2->movementation();
     }
+    phaseTransition(controller);
 }
 
-int PhaseMap1::render(sf::RenderWindow& window)
+void PhaseMap1::render(sf::RenderWindow& window, int& controller)
 {                                               
     sf::View player1View(sf::Vector2f(player1->getPosition()), sf::Vector2f(1120, 672));
     window.setView(player1View);
@@ -45,9 +46,7 @@ int PhaseMap1::render(sf::RenderWindow& window)
         switch (event.type)
         {
         case sf::Event::Closed:
-            return -1;
-        case sf::Event::MouseButtonPressed:
-            return 2;
+            controller = GAME_EXIT;
         }
 
     window.clear();
@@ -57,7 +56,6 @@ int PhaseMap1::render(sf::RenderWindow& window)
         player2->draw(window);
 	phaseMapManager.draw(window);
     window.display();
-    return 0;
 }
 
 void PhaseMap1::renderPhaseBackGround(sf::RenderWindow& window)

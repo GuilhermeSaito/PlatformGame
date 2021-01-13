@@ -12,33 +12,12 @@ PhaseMapGeneral::~PhaseMapGeneral()
 {
 }
 
-void PhaseMapGeneral::update()
+void PhaseMapGeneral::update(int& controller)
 {
-    collisionManager.startVerifyCollision();
-    player1->gravity();
-    player1->movementation();
 }
 
-int PhaseMapGeneral::render(sf::RenderWindow& window)
-{                                               
-    sf::View player1View(sf::Vector2f(player1->getPosition()), sf::Vector2f(1120, 672));
-    window.setView(player1View);
-
-    sf::Event event;
-    if (window.pollEvent(event))
-        switch (event.type)
-        {
-        case sf::Event::Closed:
-            return -1;
-        case sf::Event::MouseButtonPressed:
-            return 2;
-        }
-
-    window.clear();
-    player1->draw(window);
-    phaseMapManager.draw(window);
-    window.display();
-    return 0;
+void PhaseMapGeneral::render(sf::RenderWindow& window, int& controller)
+{      
 }
 bool PhaseMapGeneral::loadPhaseMap()
 {
@@ -48,6 +27,31 @@ bool PhaseMapGeneral::loadPhaseMap()
 }
 
 void PhaseMapGeneral::renderPhaseBackGround(sf::RenderWindow& window) {}
+
+void PhaseMapGeneral::phaseTransition(int& contoller)
+{
+    if (contoller != PHASE4)
+    {
+        if (player2 != NULL)
+            if (player2->getPosition().x >= 131 * TILE_SIZE)
+            {
+                resetEverything();
+                contoller++;
+            }
+        if (player1->getPosition().x >= 131 * TILE_SIZE)
+        {
+            resetEverything();
+            contoller++;
+        }
+    }
+}
+
+void PhaseMapGeneral::resetEverything()
+{
+    player1->setPosition({ 2 * TILE_SIZE, 27 * TILE_SIZE });
+    if (player2 != NULL)
+        player2->setPosition({ 2 * TILE_SIZE, 27 * TILE_SIZE });
+}
 
 void PhaseMapGeneral::setPlayer1(Entidade::Player1* p1)
 {

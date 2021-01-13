@@ -66,6 +66,12 @@
     <ClCompile Include="Player2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="phaseMap3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="phaseMap4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="characterSelection.h">
@@ -117,6 +123,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Player2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="phaseMap3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="phaseMap4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,6 +4,8 @@
 #include "SwitchPanel.h"
 #include "phaseMap1.h"
 #include "phaseMap2.h"
+#include "phaseMap3.h"
+#include "phaseMap4.h"
 #include "player1.h"
 #include "Player2.h"
 using std::string;
@@ -15,6 +17,8 @@ namespace PhaseMap
 	private:
 		PhaseMap1 phaseMap1;
 		PhaseMap2 phaseMap2;
+		PhaseMap3 phaseMap3;
+		PhaseMap4 phaseMap4;
 
 		Entidade::Player1 player1;
 		Entidade::Player2 player2;
@@ -26,7 +30,7 @@ namespace PhaseMap
 		int Start(sf::RenderWindow& window, const string player1Name, const string player2Name, const bool multiplayer);
 
 	private:
-		void resetEverything();
+		int loadPhaseMap(const bool multiplayer);
 
 		int notImplementedYet(sf::RenderWindow& window);
 	};

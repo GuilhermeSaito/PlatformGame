@@ -1,72 +1,5 @@
-﻿  CollisionManager.cpp
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(27,36): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(29,65): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(31,90): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(26,9): warning C4101: 'j': unreferenced local variable
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(39,36): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(41,62): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(43,87): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(38,6): warning C4101: 'i': unreferenced local variable
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(54,36): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(56,65): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(58,90): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(53,9): warning C4101: 'j': unreferenced local variable
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(66,36): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(68,62): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(70,87): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\CollisionManager.cpp(65,6): warning C4101: 'i': unreferenced local variable
-  main.cpp
-  mainController.cpp
-  phaseManager.cpp
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(59,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+﻿  phaseManager.cpp
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(84,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -75,7 +8,7 @@ C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(59,91
           [
               T=float
           ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(59,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(84,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -84,15 +17,4 @@ C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(59,67
           [
               T=float
           ]
-  phaseMapGeneral.cpp
-  phaseMap1.cpp
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseMap1.cpp(14,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-  phaseMap2.cpp
-  player1.cpp
-  Player2.cpp
-  Generating Code...
   PlatformGame.vcxproj -> C:\Users\guilh\Desktop\GameSFML\PlatformGame\Debug\PlatformGame.exe

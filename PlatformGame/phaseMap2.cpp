@@ -12,14 +12,20 @@ PhaseMap2::~PhaseMap2()
 {
 }
 
-void PhaseMap2::update()
+void PhaseMap2::update(int& controller)
 {
     collisionManager.startVerifyCollision();
     player1->gravity();
     player1->movementation();
+    if (player2 != NULL)
+    {
+        player2->gravity();
+        player2->movementation();
+    }
+    phaseTransition(controller);
 }
 
-int PhaseMap2::render(sf::RenderWindow& window)
+void PhaseMap2::render(sf::RenderWindow& window, int& controller)
 {
     sf::View player1View(sf::Vector2f(player1->getPosition()), sf::Vector2f(1120, 672));
     window.setView(player1View);
@@ -29,14 +35,16 @@ int PhaseMap2::render(sf::RenderWindow& window)
         switch (event.type)
         {
         case sf::Event::Closed:
-            return -1;
+            controller = GAME_EXIT;
         }
 
     window.clear();
+    renderPhaseBackGround(window);
     player1->draw(window);
+    if (player2 != NULL)
+        player2->draw(window);
     phaseMapManager.draw(window);
     window.display();
-    return 2;
 }
 
 void PhaseMap2::renderPhaseBackGround(sf::RenderWindow& window)

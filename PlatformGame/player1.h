@@ -21,5 +21,6 @@ namespace Entidade
 
 	private:
 		void spriteAnimation();
+		void updateContAnimation();
 	};
 }

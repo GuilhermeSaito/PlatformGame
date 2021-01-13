@@ -5,6 +5,8 @@ using PhaseMap::PhaseManager;
 PhaseManager::PhaseManager() :
     phaseMap1("../PlatformGame/data/phaseMap/PhaseMapsJson/phaseMap1.json"),
     phaseMap2("../PlatformGame/data/phaseMap/PhaseMapsJson/phaseMap2.json"),
+    phaseMap3("../PlatformGame/data/phaseMap/PhaseMapsJson/phaseMap3.json"),
+    phaseMap4("../PlatformGame/data/phaseMap/PhaseMapsJson/phaseMap4.json"),
     player1({ 2 * 48, 27 * 48 }, { 0,0 }, 100),
     player2({ 3 * 48, 27 * 48 }, { 0,0 }, 100)
 {
@@ -15,39 +17,62 @@ PhaseManager::~PhaseManager()
 }
 int PhaseManager::Start(sf::RenderWindow& window, const string player1Name, const string player2Name, const bool multiplayer)
 {
+    if (loadPhaseMap(multiplayer) == GAME_EXIT)
+        return GAME_EXIT;
+
+    // Esse ainda vai mudar, porque vou passar a escolha da fase do CharacterSelection
+    int phase = PHASE2;
+    while (phase >= 0)
+    {
+        switch (phase)
+        {
+        case PHASE1:
+            phaseMap1.update(phase);
+            phaseMap1.render(window, phase);
+            break;
+        case PHASE2:
+            phaseMap2.update(phase);
+            phaseMap2.render(window, phase);
+            break;
+        case PHASE3:
+            phaseMap3.update(phase);
+            phaseMap3.render(window, phase);
+            break;
+        case PHASE4:
+            phaseMap4.update(phase);
+            phaseMap4.render(window, phase);
+            break;
+
+        default:
+            return GAME_EXIT;
+        }
+    }
+    return GAME_EXIT;
+}
+
+int PhaseManager::loadPhaseMap(const bool multiplayer)
+{
     if (!phaseMap1.loadPhaseMap())
-        return EXIT_GAME;
+        return GAME_EXIT;
     if (!phaseMap2.loadPhaseMap())
-        return EXIT_GAME;
+        return GAME_EXIT;
+    if (!phaseMap3.loadPhaseMap())
+        return GAME_EXIT;
+    if (!phaseMap4.loadPhaseMap())
+        return GAME_EXIT;
 
     phaseMap1.setPlayer1(&player1);
     phaseMap2.setPlayer1(&player1);
+    phaseMap3.setPlayer1(&player1);
+    phaseMap4.setPlayer1(&player1);
     if (multiplayer)
     {
         phaseMap1.setPlayer2(&player2);
         phaseMap2.setPlayer2(&player2);
+        phaseMap3.setPlayer2(&player2);
+        phaseMap4.setPlayer2(&player2);
     }
-
-    int option = 0;
-    while (option >= 0)
-    {
-        if (option == 0)
-        {
-            phaseMap1.update();
-            option = phaseMap1.render(window);
-        }
-        else if (option == 2)
-        {
-            phaseMap2.update();
-            option = phaseMap2.render(window);
-        }
-    }
-    return -1;
-}
-
-void PhaseManager::resetEverything()
-{
-    player1.setPosition({ 2 * 48, 27 * 48 });
+    return 1;
 }
 
 

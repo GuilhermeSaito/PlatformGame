@@ -154,6 +154,8 @@
     <ClCompile Include="mainController.cpp" />
     <ClCompile Include="openMenu.cpp" />
     <ClCompile Include="phaseManager.cpp" />
+    <ClCompile Include="phaseMap3.cpp" />
+    <ClCompile Include="phaseMap4.cpp" />
     <ClCompile Include="phaseMapGeneral.cpp" />
     <ClCompile Include="phaseMap1.cpp" />
     <ClCompile Include="phaseMap2.cpp" />
@@ -172,6 +174,8 @@
     <ClInclude Include="mainController.h" />
     <ClInclude Include="openMenu.h" />
     <ClInclude Include="phaseManager.h" />
+    <ClInclude Include="phaseMap3.h" />
+    <ClInclude Include="phaseMap4.h" />
     <ClInclude Include="phaseMapGeneral.h" />
     <ClInclude Include="phaseMap1.h" />
     <ClInclude Include="phaseMap2.h" />

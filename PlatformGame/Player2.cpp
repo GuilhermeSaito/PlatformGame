@@ -24,12 +24,14 @@ void Player2::movementation()
 		speed.x = -walkSpeed;
 		position.x += speed.x;
 		isLookingRight = false;
+		updateContAnimation();
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
 		speed.x = walkSpeed;
 		position.x += speed.x;
 		isLookingRight = true;
+		updateContAnimation();
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		jump();
@@ -52,6 +54,14 @@ void Player2::draw(sf::RenderWindow& window)
 
 void Player2::spriteAnimation()
 {
+	if (isLookingRight)
+		sprite.setTextureRect(sf::IntRect(47 * contAnimation, 48, 47, 48));
+	else
+		sprite.setTextureRect(sf::IntRect(47 * contAnimation, 0, 47, 48));
+}
+
+void Player2::updateContAnimation()
+{
 	sf::Time elapsed = clock.getElapsedTime();
 	if (elapsed.asSeconds() >= 0.3)
 	{
@@ -60,5 +70,4 @@ void Player2::spriteAnimation()
 	}
 	if (contAnimation > 2)
 		contAnimation = 0;
-	sprite.setTextureRect(sf::IntRect(47 * contAnimation, 48, 47, 48));
 }
