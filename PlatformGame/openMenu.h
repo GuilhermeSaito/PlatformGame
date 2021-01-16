@@ -2,6 +2,7 @@
 
 #include "SwitchPanel.h"
 #include "data.h"
+#include "save.h"
 
 namespace StartScreen
 {
@@ -15,6 +16,9 @@ namespace StartScreen
 		sf::Text menu3;
 		sf::Text menu4;
 
+		SaveGame::Save save;
+		json jSave;
+
 	public:
 		OpenMenu();
 		~OpenMenu();
@@ -23,6 +27,9 @@ namespace StartScreen
 
 	private:
 		void updateMenuCollor(int controller);
+
+	public:
+		json getContinueSave();
 
 		int notImplementedYet(sf::RenderWindow& window);
 	};

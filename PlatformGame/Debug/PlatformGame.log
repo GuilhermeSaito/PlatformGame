@@ -1,5 +1,5 @@
 ﻿  phaseManager.cpp
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(99,112): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(142,112): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -8,7 +8,7 @@ C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(99,11
           [
               T=float
           ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(99,63): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(142,63): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -17,7 +17,7 @@ C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(99,63
           [
               T=float
           ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(120,82): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(163,82): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -26,7 +26,7 @@ C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(120,8
           [
               T=float
           ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(120,57): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(163,57): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -35,7 +35,7 @@ C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(120,5
           [
               T=float
           ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(139,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(266,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -44,7 +44,7 @@ C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(139,9
           [
               T=float
           ]
-C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(139,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\guilh\Desktop\GameSFML\PlatformGame\PlatformGame\phaseManager.cpp(266,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int

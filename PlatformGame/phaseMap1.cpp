@@ -26,6 +26,12 @@ PhaseMap1::~PhaseMap1()
 void PhaseMap1::update(int& controller)
 {
     collisionManager.startVerifyCollision();
+    if (isPlayerDead())
+    {
+        controller = PLAYER_DIE;
+        return;
+    }
+
     player1->gravity();
     player1->movementation();
     if (player2 != NULL)
@@ -47,7 +53,13 @@ void PhaseMap1::render(sf::RenderWindow& window, int& controller)
         {
         case sf::Event::Closed:
             controller = EXIT_GAME;
+            return;
         }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+    {
+        controller = OPTIONS;
+        return;
+    }
 
     window.clear();
     renderPhaseBackGround(window);

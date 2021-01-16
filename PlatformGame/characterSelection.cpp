@@ -10,7 +10,8 @@ CharacterSelection::CharacterSelection() :
     player1Name(""), 
     player2Name(""),
     contAnimationPlayer1(0),
-    contAnimationPlayer2(0)
+    contAnimationPlayer2(0),
+    witchPhaseIs(PHASE1)
 {
     menu1.setFont(*(Data::getInstance()->getOpenMenufont()));
     menu2.setFont(*(Data::getInstance()->getOpenMenufont()));
@@ -86,13 +87,14 @@ int CharacterSelection::phaseSelection(sf::RenderWindow& window)
 
                 case sf::Keyboard::Return:
                     if (controller == 0)
-                        return characterSelection(window);
+                        witchPhaseIs = PHASE1;
                     else if (controller == 1)
-                        return characterSelection(window);
+                        witchPhaseIs = PHASE2;
                     else if (controller == 2)
-                        return characterSelection(window);
+                        witchPhaseIs = PHASE3;
                     else
-                        return characterSelection(window);
+                        witchPhaseIs = PHASE4;
+                    return characterSelection(window);
                 }
             if (controller <= 0)
                 controller = 0;
@@ -345,6 +347,8 @@ void CharacterSelection::setPlayer2Name(const string name2) { player2Name = name
 const string CharacterSelection::getPlayer2Name() const { return player2Name; }
 void CharacterSelection::setIsMultiplayer(const bool multiplayer) { isMultiplayer = multiplayer; }
 const bool CharacterSelection::getIsMultiplayer() const { return isMultiplayer; }
+void CharacterSelection::setWitchPhaseIs(const int phaseIs) { witchPhaseIs = phaseIs; }
+const int CharacterSelection::getWitchPhaseIs() const { return witchPhaseIs; }
 
 
 

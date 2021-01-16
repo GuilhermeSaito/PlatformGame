@@ -26,7 +26,7 @@ void MainController::Start()
 		if (controller != PHASE_MANAGER)
 			controller = switcher[controller]->Start(window);
 		else
-			controller = phaseManager.Start(window, characterSelection.getPlayer1Name(), characterSelection.getPlayer2Name(), characterSelection.getIsMultiplayer());
+			controller = phaseManager.Start(window, openMenu.getContinueSave(), characterSelection.getPlayer1Name(), characterSelection.getPlayer2Name(), characterSelection.getIsMultiplayer(), characterSelection.getWitchPhaseIs());
 			
 	}
 

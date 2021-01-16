@@ -43,6 +43,11 @@ void PhaseMap2::render(sf::RenderWindow& window, int& controller)
         case sf::Event::Closed:
             controller = EXIT_GAME;
         }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+    {
+        controller = OPTIONS;
+        return;
+    }
 
     window.clear();
     renderPhaseBackGround(window);

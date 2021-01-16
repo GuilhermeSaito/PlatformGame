@@ -8,12 +8,14 @@
 // Just for the defines
 #include "SwitchPanel.h"
 
-#define PHASE1 1
-#define PHASE2 2
-#define PHASE3 3
-#define PHASE4 4
+#define PHASE1 11
+#define PHASE2 12
+#define PHASE3 13
+#define PHASE4 14
 
 #define PLAYER_DIE 66
+#define OPTIONS 70
+#define SAVE 50
 
 namespace PhaseMap
 {

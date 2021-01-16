@@ -29,6 +29,7 @@ namespace StartScreen
 		sf::Sprite player2Sprite;
 
 		bool isMultiplayer;
+		int witchPhaseIs;
 
 		// For sprite animation
 		sf::Clock clock1;
@@ -61,6 +62,8 @@ namespace StartScreen
 		const string getPlayer2Name() const;
 		void setIsMultiplayer(const bool multiplayer);
 		const bool getIsMultiplayer() const;
+		void setWitchPhaseIs(const int phaseIs);
+		const int getWitchPhaseIs() const;
 
 		int notImplementedYet(sf::RenderWindow& window);
 	};

@@ -8,6 +8,11 @@
 #define CHARACTER_SELECTION 2
 #define PHASE_MANAGER 3
 
+#define PHASE1 11
+#define PHASE2 12
+#define PHASE3 13
+#define PHASE4 14
+
 class SwitchPanel
 {
 public:

@@ -59,9 +59,16 @@ int OpenMenu::Start(sf::RenderWindow& window)
                 // 3 = Exit
                 case sf::Keyboard::Return:
                     if (controller == 0)
+                    {
+                        if (!jSave.empty())
+                            jSave.erase("players");
                         return CHARACTER_SELECTION;
+                    }
                     else if (controller == 1)
-                        return notImplementedYet(window);
+                    {
+                        jSave = save.continueRestore();
+                        return PHASE_MANAGER;
+                    }
                     else if (controller == 2)
                         return notImplementedYet(window);
                     else
@@ -115,6 +122,8 @@ void OpenMenu::updateMenuCollor(int controller)
         menu4.setFillColor(sf::Color(255, 0, 0, 255));
     }
 }
+
+json OpenMenu::getContinueSave() { return jSave; }
 
 int OpenMenu::notImplementedYet(sf::RenderWindow& window)
 {
