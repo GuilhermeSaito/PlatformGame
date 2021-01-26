@@ -18,8 +18,8 @@ namespace PhaseMap
 		PhaseMap3 phaseMap3;
 		PhaseMap4 phaseMap4;
 
-		Entidade::Player1 player1;
-		Entidade::Player2 player2;
+		Entidade::Player::Player1 player1;
+		Entidade::Player::Player2 player2;
 
 		SaveGame::Save save;
 

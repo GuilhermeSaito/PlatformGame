@@ -1,9 +1,9 @@
 #include "player1.h"
 
-using namespace Entidade;
+using namespace Entidade::Player;
 
-Player1::Player1(sf::Vector2f pos, sf::Vector2f spee, float hP) :
-	Entity(pos, spee, hP),
+Player1::Player1(sf::Vector2f pos, sf::Vector2f spee, float hP, float attackDamage) :
+	Entity(pos, spee, hP, attackDamage),
 	contAnimation(0)
 {
 	rect.setPosition(pos);

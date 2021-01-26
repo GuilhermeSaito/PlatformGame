@@ -5,7 +5,7 @@
 
 using namespace Entidade;
 
-Entity::Entity(sf::Vector2f pos, sf::Vector2f spee, float hP) :
+Entity::Entity(sf::Vector2f pos, sf::Vector2f spee, float hP, float attack) :
 	position(pos),
 	speed(spee),
 	hp(hP),
@@ -13,7 +13,8 @@ Entity::Entity(sf::Vector2f pos, sf::Vector2f spee, float hP) :
 	onGround(false),
 	jumpSpeed(-20),
 	gravityAcceleration((float)1.1),
-	isLookingRight(true)
+	isLookingRight(true),
+	attackDamage(attack)
 {
 	rect.setSize({ 48, 48 });	
 }
@@ -33,20 +34,13 @@ const sf::Vector2f Entity::getSize() const { return rect.getSize(); }
 sf::FloatRect Entity::getBoundBox() { return sf::FloatRect(position.x, position.y, rect.getSize().x, rect.getSize().y); }
 void Entity::collisionInX(PhaseMap::Tiles::Tile* tile)
 {
-	//std::cout << "Speed Y: " << speed.y << std::endl;
 	// Walking right
 	if (speed.x > 0)
 		position.x = tile->getBoundBox().left - rect.getSize().x;
 	else if (speed.x < 0 && speed.y > gravityAcceleration)
-	{
 		position.x = tile->getBoundBox().left - rect.getSize().x;
-		std::cout << "Collision 1" << std::endl;
-	}
 	else if (speed.x < 0)
-	{
 		position.x = tile->getBoundBox().left + tile->getBoundBox().width;
-		std::cout << "Collision 2" << std::endl;
-	}
 	speed.x = 0;
 }
 void Entity::collisionInY(PhaseMap::Tiles::Tile* tile)
@@ -83,3 +77,6 @@ void Entity::jump()
 	}
 }
 void Entity::setIsLookingRight(const bool r) { isLookingRight = r; }
+
+const float Entity::getAttackDamage() const { return attackDamage; }
+void Entity::setAttackDamage(const float attack) { attackDamage = attack; }

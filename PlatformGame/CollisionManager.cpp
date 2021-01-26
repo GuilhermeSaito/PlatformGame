@@ -77,8 +77,8 @@ void CollisionManager::player2CollisionY()
 	}
 }
 
-void CollisionManager::setPlayer1(Entidade::Player1* p1) { player1 = p1; }
-void CollisionManager::setPlayer2(Entidade::Player2* p2) { player2 = p2; }
+void CollisionManager::setPlayer1(Entidade::Player::Player1* p1) { player1 = p1; }
+void CollisionManager::setPlayer2(Entidade::Player::Player2* p2) { player2 = p2; }
 void CollisionManager::setPhaseMapManager(PhaseMap::Tiles::PhaseMapManager* phaseMapMa) { phaseMapManager = phaseMapMa; }
 
 void CollisionManager::ResetAll()

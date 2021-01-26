@@ -149,6 +149,7 @@
     <ClCompile Include="characterSelection.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="data.cpp" />
+    <ClCompile Include="enemyEntity.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainController.cpp" />
@@ -166,11 +167,13 @@
     <ClCompile Include="splashScreen.cpp" />
     <ClCompile Include="tile.cpp" />
     <ClCompile Include="tileManager.cpp" />
+    <ClCompile Include="zombie.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="characterSelection.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="data.h" />
+    <ClInclude Include="enemyEntity.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="mainController.h" />
     <ClInclude Include="openMenu.h" />
@@ -188,6 +191,7 @@
     <ClInclude Include="SwitchPanel.h" />
     <ClInclude Include="tile.h" />
     <ClInclude Include="tileManager.h" />
+    <ClInclude Include="zombie.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

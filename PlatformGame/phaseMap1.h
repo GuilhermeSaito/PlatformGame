@@ -1,11 +1,17 @@
 #pragma once
 
+#include <vector>
+
 #include "phaseMapGeneral.h"
+#include "zombie.h"
 
 namespace PhaseMap
 {
 	class PhaseMap1 : public PhaseMapGeneral
 	{
+	private:
+		std::vector<Entidade::Enemy::Zombie*> zombieEnemys;
+
 	public:
 		PhaseMap1(std::string path = "");
 		~PhaseMap1();
@@ -14,6 +20,7 @@ namespace PhaseMap
 		void render(sf::RenderWindow& window, int& controller) override;
 
 	private:
-		virtual void renderPhaseBackGround(sf::RenderWindow& window) override;
+		void renderPhaseBackGround(sf::RenderWindow& window) override;
+		void placingEnemys();
 	};
 }

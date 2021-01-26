@@ -23,8 +23,10 @@ namespace Entidade
 		sf::Sprite sprite;
 		bool isLookingRight;
 
+		float attackDamage;
+
 	public:
-		Entity(sf::Vector2f pos = { 0 , 0 }, sf::Vector2f spee = { 0, 0 }, float hP = 100);
+		Entity(sf::Vector2f pos = { 0 , 0 }, sf::Vector2f spee = { 0, 0 }, float hP = 100, float attack = 10);
 		~Entity();
 
 		const sf::Vector2f getPosition() const;
@@ -44,5 +46,8 @@ namespace Entidade
 		void setOnGround(const bool onG);
 		void jump();
 		void setIsLookingRight(const bool r);
+
+		const float getAttackDamage() const;
+		void setAttackDamage(const float attack);
 	};
 }

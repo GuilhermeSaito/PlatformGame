@@ -38,6 +38,14 @@ Data::Data()
 		EXIT_FAILURE;
 	if (!playerDieBackGround.loadFromFile("../PlatformGame/data/playerDieImageScenario/deathWithEffectPhrase.jpg"))
 		EXIT_FAILURE;
+	if (!zombieTexture.loadFromFile("../PlatformGame/data/enemy/zombieTexture.png"))
+		EXIT_FAILURE;
+	if (!goblinMageTexture.loadFromFile("../PlatformGame/data/enemy/goblinMageTexture.png"))
+		EXIT_FAILURE;
+	if (!reaperFlyTexture.loadFromFile("../PlatformGame/data/enemy/reaperFlyTexture.png"))
+		EXIT_FAILURE;
+	if (!bossTexture.loadFromFile("../PlatformGame/data/enemy/bossTexture.png"))
+		EXIT_FAILURE;
 
 
 	if (!openMenufont.loadFromFile("../PlatformGame/data/fonts/TurretRoad-Medium.ttf"))
@@ -126,6 +134,22 @@ sf::Texture* Data::getPurpleFloor()
 sf::Texture* Data::getPlayerDieBackGroundTexture()
 {
 	return& playerDieBackGround;
+}
+sf::Texture* Data::getZombieTexture()
+{
+	return& zombieTexture;
+}
+sf::Texture* Data::getGoblinMageTexture()
+{
+	return& goblinMageTexture;
+}
+sf::Texture* Data::getReaperFlyTexture()
+{
+	return& reaperFlyTexture;
+}
+sf::Texture* Data::getBossTexture()
+{
+	return& bossTexture;
 }
 
 sf::Font* Data::getOpenMenufont()

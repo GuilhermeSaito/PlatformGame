@@ -7,8 +7,8 @@ PhaseManager::PhaseManager() :
     phaseMap2("../PlatformGame/data/phaseMap/PhaseMapsJson/phaseMap2.json"),
     phaseMap3("../PlatformGame/data/phaseMap/PhaseMapsJson/phaseMap3.json"),
     phaseMap4("../PlatformGame/data/phaseMap/PhaseMapsJson/phaseMap4.json"),
-    player1({ 2 * 48, 27 * 48 }, { 0,0 }, 100),
-    player2({ 3 * 48, 27 * 48 }, { 0,0 }, 100),
+    player1({ 2 * 48, 27 * 48 }, { 0,0 }, 100, 30),
+    player2({ 3 * 48, 27 * 48 }, { 0,0 }, 100, 40.5),
     needToLoadPhase(true)
 {
 }

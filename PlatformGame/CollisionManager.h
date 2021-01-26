@@ -9,8 +9,8 @@
 class CollisionManager
 {
 private:
-	Entidade::Player1* player1;
-	Entidade::Player2* player2;
+	Entidade::Player::Player1* player1;
+	Entidade::Player::Player2* player2;
 	PhaseMap::Tiles::PhaseMapManager* phaseMapManager;
 
 public:
@@ -26,8 +26,8 @@ private:
 	void player2CollisionY();
 
 public:
-	void setPlayer1(Entidade::Player1* p1);
-	void setPlayer2(Entidade::Player2* p2);
+	void setPlayer1(Entidade::Player::Player1* p1);
+	void setPlayer2(Entidade::Player::Player2* p2);
 	void setPhaseMapManager(PhaseMap::Tiles::PhaseMapManager* phaseMapMa);
 
 	void ResetAll();

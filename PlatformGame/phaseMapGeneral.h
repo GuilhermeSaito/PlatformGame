@@ -24,8 +24,8 @@ namespace PhaseMap
 	protected:
 		Tiles::PhaseMapManager phaseMapManager;
 
-		Entidade::Player1* player1;
-		Entidade::Player2* player2;
+		Entidade::Player::Player1* player1;
+		Entidade::Player::Player2* player2;
 
 		CollisionManager collisionManager;
 
@@ -47,8 +47,8 @@ namespace PhaseMap
 	public:
 		void resetEverythingForTransition();
 
-		void setPlayer1(Entidade::Player1* p1);
-		void setPlayer2(Entidade::Player2* p2);
+		void setPlayer1(Entidade::Player::Player1* p1);
+		void setPlayer2(Entidade::Player::Player2* p2);
 
 		void ResetAll();
 	};

@@ -25,6 +25,10 @@ private:
 	sf::Texture iceFloor2;
 	sf::Texture purpleFloor;
 	sf::Texture playerDieBackGround;
+	sf::Texture zombieTexture;
+	sf::Texture goblinMageTexture;
+	sf::Texture reaperFlyTexture;
+	sf::Texture bossTexture;
 
 	sf::Font openMenufont;
 
@@ -51,6 +55,10 @@ public:
 	sf::Texture* getIceFloor2();
 	sf::Texture* getPurpleFloor();
 	sf::Texture* getPlayerDieBackGroundTexture();
+	sf::Texture* getZombieTexture();
+	sf::Texture* getGoblinMageTexture();
+	sf::Texture* getReaperFlyTexture();
+	sf::Texture* getBossTexture();
 
 	sf::Font* getOpenMenufont();
 

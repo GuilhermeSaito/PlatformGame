@@ -75,6 +75,12 @@
     <ClCompile Include="save.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="enemyEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zombie.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="characterSelection.h">
@@ -135,6 +141,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="save.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zombie.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
