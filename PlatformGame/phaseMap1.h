@@ -20,7 +20,7 @@ namespace PhaseMap
 		void render(sf::RenderWindow& window, int& controller) override;
 
 	private:
-		void renderPhaseBackGround(sf::RenderWindow& window) override;
+		void renderPhaseBackGround(sf::RenderWindow& window);
 		void placingEnemys();
 	};
 }

@@ -26,8 +26,6 @@ bool PhaseMapGeneral::loadPhaseMap()
     return flag;
 }
 
-void PhaseMapGeneral::renderPhaseBackGround(sf::RenderWindow& window) {}
-
 void PhaseMapGeneral::phaseTransition(int& contoller)
 {
     if (contoller != PHASE4)

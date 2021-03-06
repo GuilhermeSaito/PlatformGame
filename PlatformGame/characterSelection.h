@@ -19,17 +19,10 @@ namespace StartScreen
 		string player1Name;
 		string player2Name;
 
-		// Just to show the player how is the phase
-		sf::Sprite beginnerPhaseSprite;
-		sf::Sprite blueOceanPhaseSprite;
-		sf::Sprite cavePhaseSprite;
-		sf::Sprite deathPhaseSprite;
-
 		sf::Sprite player1Sprite;
 		sf::Sprite player2Sprite;
 
 		bool isMultiplayer;
-		int witchPhaseIs;
 
 		// For sprite animation
 		sf::Clock clock1;
@@ -44,11 +37,10 @@ namespace StartScreen
 		int Start(sf::RenderWindow& window) override;
 
 	private:
-		int phaseSelection(sf::RenderWindow& window);
 		int characterSelection(sf::RenderWindow& window);
-		int nameCharacterSelection(sf::RenderWindow& window);
+		int nameCharacterSelection(sf::RenderWindow& window); // Esse metodo eh interessante, que eh o input dos nomes dos player, nao sei se essa eh a melhor forma de se fazer, mas funciona hahaha
 
-		void updateMenuCollor(int controller, sf::RenderWindow& window, bool isPhaseSelection);
+		void updateMenuCollor(int controller, sf::RenderWindow& window);
 		void player1Animation();
 		void player2Animation();
 
@@ -62,8 +54,6 @@ namespace StartScreen
 		const string getPlayer2Name() const;
 		void setIsMultiplayer(const bool multiplayer);
 		const bool getIsMultiplayer() const;
-		void setWitchPhaseIs(const int phaseIs);
-		const int getWitchPhaseIs() const;
 
 		int notImplementedYet(sf::RenderWindow& window);
 	};

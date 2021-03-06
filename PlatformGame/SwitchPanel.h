@@ -2,11 +2,13 @@
 
 #include <SFML/Graphics.hpp>
 
+// Em vez de ficar usando numeros, coloquei com nomes.	Acredito que daria para usar um Enum aqui...
 #define EXIT_GAME -1
 #define SPLASH_SCREEN 0
 #define OPEN_MENU 1
-#define CHARACTER_SELECTION 2
-#define PHASE_MANAGER 3
+#define PHASE_SELECTION 2
+#define CHARACTER_SELECTION 3
+#define PHASE_MANAGER 4
 
 #define PHASE1 11
 #define PHASE2 12

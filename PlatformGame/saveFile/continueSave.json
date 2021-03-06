@@ -1,12 +1,12 @@
 {
     "players": {
         "multiplayer": true,
-        "phase": 13,
-        "player1Name": "Arudina",
-        "player1PositionX": 1648.0,
-        "player1PositionY": 912.0,
-        "player2Name": "Alpheratz",
-        "player2PositionX": 1536.0,
-        "player2PositionY": 1344.0
+        "phase": 12,
+        "player1Name": "",
+        "player1PositionX": 776.0,
+        "player1PositionY": 1200.0,
+        "player2Name": "",
+        "player2PositionX": 816.0,
+        "player2PositionY": 1200.0
     }
 }

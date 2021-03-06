@@ -161,6 +161,7 @@
     <ClCompile Include="phaseMap1.cpp" />
     <ClCompile Include="phaseMap2.cpp" />
     <ClCompile Include="PhaseMapManager.cpp" />
+    <ClCompile Include="phaseSelection.cpp" />
     <ClCompile Include="player1.cpp" />
     <ClCompile Include="Player2.cpp" />
     <ClCompile Include="save.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="phaseMap1.h" />
     <ClInclude Include="phaseMap2.h" />
     <ClInclude Include="PhaseMapManager.h" />
+    <ClInclude Include="phaseSelection.h" />
     <ClInclude Include="player1.h" />
     <ClInclude Include="Player2.h" />
     <ClInclude Include="save.h" />

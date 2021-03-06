@@ -14,6 +14,6 @@ namespace PhaseMap
 		void render(sf::RenderWindow& window, int& controller) override;
 
 	private:
-		virtual void renderPhaseBackGround(sf::RenderWindow& window) override;
+		virtual void renderPhaseBackGround(sf::RenderWindow& window);
 	};
 }

@@ -40,7 +40,6 @@ namespace PhaseMap
 		bool loadPhaseMap();
 
 	protected:
-		virtual void renderPhaseBackGround(sf::RenderWindow& window);
 		void phaseTransition(int& contoller);
 		bool isPlayerDead();
 

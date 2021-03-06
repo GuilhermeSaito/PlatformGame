@@ -36,6 +36,7 @@ int OpenMenu::Start(sf::RenderWindow& window)
 {
     int controller = 0;
 
+    // Soh sai desse loop se o jogador escolher sair da aplicacao (pelo x ou altF4) ou se escolher o newGame/Continue/Exit (Ranking tambem, mas voltaria nessa tela depois)
     while (1)
     {
         sf::Event event;
@@ -60,9 +61,10 @@ int OpenMenu::Start(sf::RenderWindow& window)
                 case sf::Keyboard::Return:
                     if (controller == 0)
                     {
+                        // Eh necessario limpar o jSvae, para nao passar lixo para o mainController.
                         if (!jSave.empty())
                             jSave.erase("players");
-                        return CHARACTER_SELECTION;
+                        return PHASE_SELECTION;
                     }
                     else if (controller == 1)
                     {

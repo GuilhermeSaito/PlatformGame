@@ -4,7 +4,7 @@ int main()
 {
 	MainController mainController;
 
-	system("pause");
+	getchar();
 
 	return 0;
 }

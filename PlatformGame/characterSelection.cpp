@@ -1,4 +1,4 @@
-// Included for remove \r from players name
+// Included to remove \r from players name
 #include <algorithm>
 
 #include "characterSelection.h"
@@ -10,27 +10,16 @@ CharacterSelection::CharacterSelection() :
     player1Name(""), 
     player2Name(""),
     contAnimationPlayer1(0),
-    contAnimationPlayer2(0),
-    witchPhaseIs(PHASE1)
+    contAnimationPlayer2(0)
 {
     menu1.setFont(*(Data::getInstance()->getOpenMenufont()));
+    menu1.setCharacterSize(25);
     menu2.setFont(*(Data::getInstance()->getOpenMenufont()));
+    menu2.setCharacterSize(25);
     menu3.setFont(*(Data::getInstance()->getOpenMenufont()));
+    menu3.setCharacterSize(25);
     menu4.setFont(*(Data::getInstance()->getOpenMenufont()));
-
-    beginnerPhaseSprite.setTexture(*(Data::getInstance()->getBeginnerPhaseBackGround()));
-    // Width 550, Height 690
-    beginnerPhaseSprite.setPosition({ 500.f, 20.f });
-    beginnerPhaseSprite.setScale(sf::Vector2f(0.2865, 0.8323));
-    blueOceanPhaseSprite.setTexture(*(Data::getInstance()->getBlueOceanPhaseBackGround()));
-    blueOceanPhaseSprite.setPosition({ 500.f, 20.f });
-    blueOceanPhaseSprite.setScale(sf::Vector2f(0.1571, 0.3504));
-    cavePhaseSprite.setTexture(*(Data::getInstance()->getCavePhaseBackGround()));
-    cavePhaseSprite.setPosition({ 500.f, 20.f });
-    cavePhaseSprite.setScale(sf::Vector2f(0.1572, 0.3504));
-    deathPhaseSprite.setTexture(*(Data::getInstance()->getDathPhaseBackGround()));
-    deathPhaseSprite.setPosition({ 500.f, 20.f });
-    deathPhaseSprite.setScale(sf::Vector2f(0.4297, 0.9584));
+    menu4.setCharacterSize(25);
 
     player1Sprite.setTexture(*(Data::getInstance()->getPlayer1Texture()));
     player1Sprite.setPosition({ 550.f, 360.f });
@@ -44,70 +33,7 @@ CharacterSelection::~CharacterSelection()
 
 int CharacterSelection::Start(sf::RenderWindow& window)
 {
-    return phaseSelection(window);
-}
-
-int CharacterSelection::phaseSelection(sf::RenderWindow& window)
-{
-    menu1.setString("Beginner Phase");
-    menu1.setPosition({ 100.f, 150.f });
-    menu1.setCharacterSize(25);
-
-    menu2.setString("Blue Ocean Phase");
-    menu2.setPosition({ 100.f, 300.f });
-    menu2.setCharacterSize(25);
-
-    menu3.setString("Cave Phase");
-    menu3.setPosition({ 100.f, 450.f });
-    menu3.setCharacterSize(25);
-
-    menu4.setString("Death Phase");
-    menu4.setPosition({ 100.f, 600.f });
-    menu4.setCharacterSize(25);
-
-    int controller = 0;
-
-    while (1)
-    {
-        window.clear();
-        sf::Event event;
-        if (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                return EXIT_GAME;
-            if (event.type == sf::Event::KeyPressed)
-                switch (event.key.code)
-                {
-                case sf::Keyboard::Up:
-                    controller--;
-                    break;
-                case sf::Keyboard::Down:
-                    controller++;
-                    break;
-
-                case sf::Keyboard::Return:
-                    if (controller == 0)
-                        witchPhaseIs = PHASE1;
-                    else if (controller == 1)
-                        witchPhaseIs = PHASE2;
-                    else if (controller == 2)
-                        witchPhaseIs = PHASE3;
-                    else
-                        witchPhaseIs = PHASE4;
-                    return characterSelection(window);
-                }
-            if (controller <= 0)
-                controller = 0;
-            if (controller >= 3)
-                controller = 3;
-        }
-        updateMenuCollor(controller, window, true);
-        window.draw(menu1);
-        window.draw(menu2);
-        window.draw(menu3);
-        window.draw(menu4);
-        window.display();
-    }
+    return characterSelection(window);
 }
 
 int CharacterSelection::characterSelection(sf::RenderWindow& window)
@@ -120,8 +46,8 @@ int CharacterSelection::characterSelection(sf::RenderWindow& window)
     menu2.setString("2 Player");
     menu2.setPosition({ 100.f, 525.f });
 
-    // Soh arrumando a cor dos menus
-    updateMenuCollor(0, window, false);
+    // Soh arrumando a cor dos menus, se necessario
+    updateMenuCollor(0, window);
 
     while (1)
     {
@@ -156,17 +82,18 @@ int CharacterSelection::characterSelection(sf::RenderWindow& window)
         player1Animation();
         if (controller)
             player2Animation();
-        updateMenuCollor(controller, window, false);
+        updateMenuCollor(controller, window);
         window.draw(menu1);
         window.draw(menu2);
         window.display();
     }
 }
 
+// Esse metodo eh interessante, que eh o input dos nomes dos player, nao sei se essa eh a melhor forma de se fazer, mas funciona hahaha
 int CharacterSelection::nameCharacterSelection(sf::RenderWindow& window)
 {
     int tabPressed = 1;
-    int totalChar1 = 0, totalChar2 = 0;
+    int totalChar1 = 0, totalChar2 = 0; // Nao permite extrapolar 14 characteres, essa limitacao estah no if do metodo "player1NameEnter
 
     player1Name = "";
     player2Name = "";
@@ -225,6 +152,7 @@ int CharacterSelection::nameCharacterSelection(sf::RenderWindow& window)
                     player2Name.erase(std::remove(player2Name.begin(), player2Name.end(), '\r'), player2Name.end());
                     return PHASE_MANAGER;
                 }
+            // Soh para nao deixar o valor muito alto, sei lah, vai que ultrapassa o valor maximo do int neh
             if (tabPressed > 1111)
                 tabPressed = 0;
         }
@@ -240,45 +168,20 @@ int CharacterSelection::nameCharacterSelection(sf::RenderWindow& window)
     }
 }
 
-void CharacterSelection::updateMenuCollor(int controller, sf::RenderWindow& window, bool isPhaseSelection)
+void CharacterSelection::updateMenuCollor(int controller, sf::RenderWindow& window)
 {
     if (controller == 0)
     {
         menu1.setFillColor(sf::Color(255, 0, 0, 255));
         menu2.setFillColor(sf::Color(255, 255, 255, 255));
-        menu3.setFillColor(sf::Color(255, 255, 255, 255));
-        menu4.setFillColor(sf::Color(255, 255, 255, 255));
-        if (isPhaseSelection) window.draw(beginnerPhaseSprite);
-        else window.draw(player1Sprite);
+        window.draw(player1Sprite);
     }
-    else if (controller == 1)
+    else 
     {
         menu1.setFillColor(sf::Color(255, 255, 255, 255));
         menu2.setFillColor(sf::Color(255, 0, 0, 255));
-        menu3.setFillColor(sf::Color(255, 255, 255, 255));
-        menu4.setFillColor(sf::Color(255, 255, 255, 255));
-        if (isPhaseSelection) window.draw(blueOceanPhaseSprite);
-        else
-        {
-            window.draw(player1Sprite);
-            window.draw(player2Sprite);
-        }
-    }
-    else if (controller == 2)
-    {
-        menu1.setFillColor(sf::Color(255, 255, 255, 255));
-        menu2.setFillColor(sf::Color(255, 255, 255, 255));
-        menu3.setFillColor(sf::Color(255, 0, 0, 255));
-        menu4.setFillColor(sf::Color(255, 255, 255, 255));
-        window.draw(cavePhaseSprite);
-    }
-    else
-    {
-        menu1.setFillColor(sf::Color(255, 255, 255, 255));
-        menu2.setFillColor(sf::Color(255, 255, 255, 255));
-        menu3.setFillColor(sf::Color(255, 255, 255, 255)); 
-        menu4.setFillColor(sf::Color(255, 0, 0, 255));
-        window.draw(deathPhaseSprite);
+        window.draw(player1Sprite);
+        window.draw(player2Sprite);
     }
 }
 
@@ -347,8 +250,6 @@ void CharacterSelection::setPlayer2Name(const string name2) { player2Name = name
 const string CharacterSelection::getPlayer2Name() const { return player2Name; }
 void CharacterSelection::setIsMultiplayer(const bool multiplayer) { isMultiplayer = multiplayer; }
 const bool CharacterSelection::getIsMultiplayer() const { return isMultiplayer; }
-void CharacterSelection::setWitchPhaseIs(const int phaseIs) { witchPhaseIs = phaseIs; }
-const int CharacterSelection::getWitchPhaseIs() const { return witchPhaseIs; }
 
 
 
